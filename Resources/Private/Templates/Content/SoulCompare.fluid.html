@@ -1,0 +1,16 @@
+<f:comment>
+    Before and after, side by side. The first file is before and the
+    second after; the title of a file is its label, the description its
+    claim.
+</f:comment>
+<f:layout name="Content/Default" />
+<f:section name="Main">
+    <f:if condition="{files.1}">
+        <f:variable name="before">{f:uri.image(image: files.0, maxWidth: 1200)}</f:variable>
+        <f:variable name="after">{f:uri.image(image: files.1, maxWidth: 1200)}</f:variable>
+        <sds-compare {soul:attributes(of: {
+            beforeSrc: before, beforeAlt: files.0.alternative, beforeCaption: files.0.description, beforeLabel: files.0.title,
+            afterSrc: after, afterAlt: files.1.alternative, afterCaption: files.1.description, afterLabel: files.1.title
+        })}></sds-compare>
+    </f:if>
+</f:section>

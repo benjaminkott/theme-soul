@@ -15,6 +15,14 @@ lib.contentElement {
 tt_content.menu_section.dataProcessing.1727 = soul-sections
 tt_content.menu_section.dataProcessing.1727.from = menu
 
+# The core's table and list of terms, as the data the elements take.
+tt_content.table.dataProcessing.1727 = soul-table
+tt_content.bullets.dataProcessing.1727 = soul-lines
+tt_content.bullets.dataProcessing.1727 {
+  shape = facts
+  as = facts
+}
+
 tt_content.soul_hero =< lib.contentElement
 tt_content.soul_hero {
   templateName = SoulHero
@@ -56,10 +64,71 @@ tt_content.soul_icons =< lib.contentElement
 tt_content.soul_icons.templateName = SoulIcons
 
 tt_content.soul_facts =< lib.contentElement
-tt_content.soul_facts.templateName = SoulFacts
+tt_content.soul_facts {
+  templateName = SoulFacts
+  # After the core's record-transformation, which makes the entries.
+  dataProcessing.1770716913 = soul-entries
+  dataProcessing.1770716913.fields {
+    term = header
+    value = text
+  }
+}
 
 tt_content.soul_register =< lib.contentElement
 tt_content.soul_register.templateName = SoulRegister
 
 tt_content.soul_decision =< lib.contentElement
 tt_content.soul_decision.templateName = SoulDecision
+
+tt_content.soul_compare =< lib.contentElement
+tt_content.soul_compare {
+  templateName = SoulCompare
+  dataProcessing.10 = files
+  dataProcessing.10.references.fieldName = assets
+}
+
+tt_content.soul_embed =< lib.contentElement
+tt_content.soul_embed.templateName = SoulEmbed
+
+tt_content.soul_copy =< lib.contentElement
+tt_content.soul_copy.templateName = SoulCopy
+
+tt_content.soul_progress =< lib.contentElement
+tt_content.soul_progress.templateName = SoulProgress
+
+tt_content.soul_confval =< lib.contentElement
+tt_content.soul_confval.templateName = SoulConfval
+
+tt_content.soul_swatches =< lib.contentElement
+tt_content.soul_swatches.templateName = SoulSwatches
+
+tt_content.soul_dialog =< lib.contentElement
+tt_content.soul_dialog.templateName = SoulDialog
+
+tt_content.soul_diff =< lib.contentElement
+tt_content.soul_diff {
+  templateName = SoulDiff
+  dataProcessing.10 = soul-lines
+  dataProcessing.10.shape = diff
+}
+
+tt_content.soul_tree =< lib.contentElement
+tt_content.soul_tree {
+  templateName = SoulTree
+  dataProcessing.10 = soul-lines
+  dataProcessing.10.shape = tree
+}
+
+tt_content.soul_run =< lib.contentElement
+tt_content.soul_run {
+  templateName = SoulRun
+  # After the core's record-transformation, which makes the entries.
+  dataProcessing.1770716913 = soul-entries
+  dataProcessing.1770716913.fields {
+    label = header
+    state = state
+    meta = label
+    note = note
+    output = text
+  }
+}

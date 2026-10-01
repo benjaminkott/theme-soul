@@ -99,6 +99,56 @@ defined('TYPO3') or die();
                 'max' => 100,
             ],
         ],
+        'tx_themesoul_value' => [
+            'label' => $labels . 'tt_content.tx_themesoul_value',
+            'config' => [
+                'type' => 'input',
+                'size' => 20,
+                'max' => 100,
+            ],
+        ],
+        'tx_themesoul_max' => [
+            'label' => $labels . 'tt_content.tx_themesoul_max',
+            'config' => [
+                'type' => 'input',
+                'size' => 20,
+                'max' => 100,
+            ],
+        ],
+        'tx_themesoul_ratio' => [
+            'label' => $labels . 'tt_content.tx_themesoul_ratio',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    ['label' => '16 / 9', 'value' => '16 / 9'],
+                    ['label' => '4 / 3', 'value' => '4 / 3'],
+                    ['label' => '1 / 1', 'value' => '1 / 1'],
+                    ['label' => '3 / 4', 'value' => '3 / 4'],
+                ],
+                'default' => '16 / 9',
+            ],
+        ],
+        'tx_themesoul_flag' => [
+            'label' => $labels . 'tt_content.tx_themesoul_flag',
+            'config' => [
+                'type' => 'check',
+                'renderType' => 'checkboxToggle',
+            ],
+        ],
+        'tx_themesoul_state' => [
+            'label' => $labels . 'tt_content.tx_themesoul_state',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    ['label' => $labels . 'state.running', 'value' => 'running'],
+                    ['label' => $labels . 'state.done', 'value' => 'done'],
+                    ['label' => $labels . 'state.failed', 'value' => 'failed'],
+                ],
+                'default' => 'running',
+            ],
+        ],
         'tx_themesoul_action' => [
             'label' => $labels . 'tt_content.tx_themesoul_action',
             'description' => $labels . 'tt_content.tx_themesoul_action.description',
@@ -162,11 +212,13 @@ defined('TYPO3') or die();
             'icon' => 'content-panel',
             'fields' => 'header,tx_themesoul_columns,tx_themesoul_items',
             'items' => 'label,icon,header,text',
+            'itemText' => 'plain',
         ],
         'soul_cards' => [
             'icon' => 'content-card-group',
             'fields' => 'header,tx_themesoul_columns,tx_themesoul_items',
             'items' => 'header,text,link,link_label,media,label,value,icon,note',
+            'itemText' => 'plain',
         ],
         'soul_icons' => [
             'icon' => 'content-widget-list',
@@ -177,6 +229,7 @@ defined('TYPO3') or die();
             'icon' => 'content-listgroup',
             'fields' => 'header,tx_themesoul_items',
             'items' => 'header,text',
+            'itemText' => 'plain',
         ],
         'soul_register' => [
             'icon' => 'content-menu-section',
@@ -188,6 +241,61 @@ defined('TYPO3') or die();
             'fields' => 'header,subheader,bodytext,tx_themesoul_by,tx_themesoul_due,tx_themesoul_items',
             'body' => 'plain',
             'items' => 'value,header,text,marked,chosen',
+        ],
+        'soul_compare' => [
+            'icon' => 'content-beside-text-img-left',
+            'fields' => 'header,assets',
+            'labels' => 'assets',
+        ],
+        'soul_embed' => [
+            'icon' => 'content-special-html',
+            'fields' => 'header,subheader,header_link,tx_themesoul_ratio,tx_themesoul_flag',
+            'labels' => 'header,subheader,header_link,tx_themesoul_flag',
+        ],
+        'soul_copy' => [
+            'icon' => 'content-text',
+            'fields' => 'header,subheader',
+            'labels' => 'header,subheader',
+        ],
+        'soul_progress' => [
+            'icon' => 'content-widget-chart-bar',
+            'fields' => 'header,tx_themesoul_value,tx_themesoul_max,subheader,bodytext,tx_themesoul_flag',
+            'labels' => 'header,tx_themesoul_value,subheader,bodytext,tx_themesoul_flag',
+        ],
+        'soul_diff' => [
+            'icon' => 'content-special-html',
+            'fields' => 'header,bodytext',
+            'body' => 'code',
+            'labels' => 'header,bodytext',
+        ],
+        'soul_tree' => [
+            'icon' => 'content-menu-sitemap',
+            'fields' => 'header,bodytext',
+            'body' => 'code',
+            'labels' => 'bodytext',
+        ],
+        'soul_confval' => [
+            'icon' => 'content-widget-table',
+            'fields' => 'header,subheader,tx_themesoul_value,tx_themesoul_flag,bodytext',
+            'body' => 'rich',
+            'labels' => 'header,subheader,tx_themesoul_value,tx_themesoul_flag',
+        ],
+        'soul_swatches' => [
+            'icon' => 'content-widget-chart-pie',
+            'fields' => 'header,tx_themesoul_items',
+            'items' => 'value,header',
+        ],
+        'soul_run' => [
+            'icon' => 'content-widget-list',
+            'fields' => 'header,subheader,tx_themesoul_state,tx_themesoul_items',
+            'labels' => 'subheader',
+            'items' => 'header,state,label,note,text',
+            'itemText' => 'code',
+        ],
+        'soul_dialog' => [
+            'icon' => 'content-message',
+            'fields' => 'tx_themesoul_action,header,bodytext',
+            'labels' => 'header,bodytext',
         ],
     ];
 
@@ -201,6 +309,14 @@ defined('TYPO3') or die();
                 },
             ],
         ];
+        /* A core field under the name it has in this type: the address of
+           an embed, the value of a copy. */
+        foreach (array_filter(explode(',', $definition['labels'] ?? '')) as $field) {
+            $overrides[$field]['label'] = $labels . 'tt_content.' . $field . '.' . $type;
+        }
+        if ($type === 'soul_compare') {
+            $overrides['assets']['config'] = ['minitems' => 2, 'maxitems' => 2];
+        }
         /* A set shows the fields of an entry that this type reads, each
            under the name it has here: a question, a tab, a stop. */
         if (isset($definition['items'])) {
@@ -208,6 +324,13 @@ defined('TYPO3') or die();
             foreach (explode(',', $definition['items']) as $field) {
                 $columns[$field]['label'] = $labels . 'tx_themesoul_item.' . $type . '.' . $field;
             }
+            /* Rich text only where it stands between the tags. A text the
+               element takes as an attribute is a sentence, and plain. */
+            $columns['text']['config'] = match ($definition['itemText'] ?? 'rich') {
+                'plain' => ['enableRichtext' => false, 'rows' => 3],
+                'code' => ['enableRichtext' => false, 'fixedFont' => true, 'wrap' => 'off'],
+                default => ['enableRichtext' => true],
+            };
             $overrides['tx_themesoul_items'] = [
                 'label' => $labels . 'tt_content.tx_themesoul_items.' . $type,
                 'config' => [

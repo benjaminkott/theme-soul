@@ -1,0 +1,11 @@
+<f:comment>
+    A button that opens a dialog. The button points at the dialog by its
+    id, so the platform opens it, takes the focus and gives it back.
+</f:comment>
+<f:layout name="Content/Default" />
+<f:section name="Header" />
+<f:section name="Main">
+    <f:variable name="close"><f:translate key="theme_soul.messages:close" /></f:variable>
+    <sds-button {soul:attributes(of: {variant: 'secondary', for: 'dialog-{data.uid}'})}>{data.tx_themesoul_action}</sds-button>
+    <sds-dialog {soul:attributes(of: {id: 'dialog-{data.uid}', heading: data.header, body: data.bodytext, cancelLabel: close})}></sds-dialog>
+</f:section>

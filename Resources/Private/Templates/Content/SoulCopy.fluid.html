@@ -1,0 +1,9 @@
+<f:comment>
+    A value the reader takes away: a command, a key, an address. The
+    element puts it on the clipboard and says so in words.
+</f:comment>
+<f:layout name="Content/Default" />
+<f:section name="Header" />
+<f:section name="Main">
+    <sds-copy {soul:attributes(of: {value: data.subheader, label: data.header})}></sds-copy>
+</f:section>

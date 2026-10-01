@@ -1,0 +1,24 @@
+"tt_content"
+,"uid","pid","CType","header","header_layout","subheader","bodytext","colPos","sorting","header_link","tx_themesoul_items","tx_themesoul_value","tx_themesoul_max","tx_themesoul_ratio","tx_themesoul_flag","tx_themesoul_state","tx_themesoul_action"
+,70,8,"soul_embed","A map of the venue",0,"Where the sessions are.","",0,2048,"https://example.org/map",0,"","","4 / 3",1,"running",""
+,71,8,"soul_copy","Install command",0,"composer require typo3/theme-soul","",0,2176,"",0,"","","16 / 9",0,"running",""
+,72,8,"soul_progress","Translations",0,"%","Two languages are missing.",0,2304,"",0,"60","100","16 / 9",1,"running",""
+,73,8,"soul_diff","Configuration/Sets/soul/config.yaml",0,"","--- a/config.yaml
++++ b/config.yaml
+@@ -1,2 +1,2 @@
+ name: typo3/theme-soul
+-label: Soul
++label: Theme: Soul",0,2432,"",0,"","","16 / 9",0,"running",""
+,74,8,"soul_tree","Package",0,"","Classes/
+  DataProcessing/ # what the templates read
+Configuration/
+composer.json",0,2560,"",0,"","","16 / 9",0,"running",""
+,75,8,"soul_confval","soul.product",0,"string","<p>The name of the site.</p>",0,2688,"",0,"empty","","16 / 9",1,"running",""
+,76,8,"soul_swatches","Colours",0,"","",0,2816,"",1,"","","16 / 9",0,"running",""
+,77,8,"soul_run","Release 0.2.0",0,"Two of three steps done.","",0,2944,"",2,"","","16 / 9",0,"running",""
+,78,8,"soul_dialog","What the theme leaves out",0,"","The TYPO3 backend, and official TYPO3 sites.",0,3072,"",0,"","","16 / 9",0,"running","Read the boundary"
+"tx_themesoul_item"
+,"uid","pid","uid_foreign","tablename","fieldname","sorting_foreign","header","text","label","value","note","state"
+,30,8,76,"tt_content","tx_themesoul_items",1,"Accent","","","#ff8700","","ahead"
+,31,8,77,"tt_content","tx_themesoul_items",1,"Build","","2 min","","","done"
+,32,8,77,"tt_content","tx_themesoul_items",2,"Publish","","","","waits for the tag","running"

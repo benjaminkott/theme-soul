@@ -1,0 +1,13 @@
+<f:comment>
+    A document from somewhere else, in a frame this page controls. The
+    header names what the frame holds, for a reader who hears the page, and
+    the subheader is the claim under it.
+</f:comment>
+<f:layout name="Content/Default" />
+<f:section name="Header" />
+<f:section name="Main">
+    <f:if condition="{data.header_link}">
+        <f:variable name="src">{f:uri.typolink(parameter: data.header_link)}</f:variable>
+        <sds-embed {soul:attributes(of: {src: src, label: data.header, ratio: data.tx_themesoul_ratio, caption: data.subheader}, flags: {allowfullscreen: data.tx_themesoul_flag})}></sds-embed>
+    </f:if>
+</f:section>

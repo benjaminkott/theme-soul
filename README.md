@@ -66,6 +66,10 @@ a table in `sds-table`, pages as `sds-card` in `sds-grid`, files as
 `sds-figure`. Frames, spaces and alignment are off, because each one
 needs a class the system does not define.
 
+Every template sets an element by its attributes. Only the editor's rich
+text stands between the tags, because an attribute cannot carry markup.
+A list, a table or a tree goes over as JSON in an attribute.
+
 | Type | Element | Fields |
 | --- | --- | --- |
 | `soul_hero` | `sds-eyebrow`, a display heading, `sds-button`, `sds-figure` | subheader, header, text, link, action label, one file |
@@ -83,6 +87,16 @@ needs a class the system does not define.
 | `soul_facts` | `sds-facts` | entries: term, what it says |
 | `soul_register` | `sds-register`, `sds-entry` | subheader as the number prefix; entries: heading, status, tone, text, still to do, origin |
 | `soul_decision` | `sds-decision`, `sds-answer` | header as the question, subheader, lead, decided by, due; entries: key, answer, text, recommended, decided |
+| `soul_compare` | `sds-compare` | header, two files: before and after, each with its title as the label and its description as the claim |
+| `soul_embed` | `sds-embed` | header as what the frame holds, subheader as the caption, link as the address, shape, full screen |
+| `soul_copy` | `sds-copy` | header as what the value is, subheader as the value |
+| `soul_progress` | `sds-progress` | header as the job, value, maximum, subheader as the unit, text as the bound, running |
+| `soul_diff` | `sds-diff` | header as the path, a unified diff |
+| `soul_tree` | `sds-tree` | header, one entry per line, nested by indentation, a note after ` # ` |
+| `soul_confval` | `sds-confval` | header as the name, subheader as the type, default, required, rich text |
+| `soul_swatches` | `sds-swatch` in `sds-grid` | entries: value, name |
+| `soul_run` | `sds-run` | header, subheader as the note, verdict; entries: step, state, meta, note, output |
+| `soul_dialog` | `sds-button`, `sds-dialog` | button label, header as the heading, text |
 
 The entries of a set are records of `tx_themesoul_item`, edited inline in
 the content element. Each type shows the fields of an entry it reads,

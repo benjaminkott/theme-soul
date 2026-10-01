@@ -8,7 +8,8 @@
         <ul>
             <f:for each="{files}" as="file">
                 <li>
-                    <a href="{file.publicUrl}" download {soul:attributes(of: {target: data.target})}>{f:if(condition: file.properties.title, then: file.properties.title, else: file.name)}</a>
+                    <f:variable name="name">{f:if(condition: file.properties.title, then: file.properties.title, else: file.name)}</f:variable>
+                    <sds-link {soul:attributes(of: {label: name, href: file.publicUrl, icon: 'actions-download'})}></sds-link>
                     <f:if condition="{data.filelink_size}"> · <f:format.bytes value="{file.properties.size}" /></f:if>
                     <f:if condition="{data.uploads_description} && {file.properties.description}"><br>{file.properties.description}</f:if>
                 </li>

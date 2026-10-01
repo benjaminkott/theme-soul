@@ -51,19 +51,19 @@ final class SetsTest extends SiteTestCase
     #[Test]
     public function figuresStandInADenseGridWithWhatBoundsThem(): void
     {
-        self::assertMatchesRegularExpression('~<sds-grid variant="dense" columns="3">\s*<sds-stat value="15" label="content types" icon="actions-list">with their own fields</sds-stat>~', $this->markup);
+        self::assertMatchesRegularExpression('~<sds-grid variant="dense" columns="3">\s*<sds-stat value="15" label="content types" icon="actions-list" note="with their own fields"></sds-stat>~', $this->markup);
     }
 
     #[Test]
     public function statementsStandOnPlanes(): void
     {
-        self::assertStringContainsString('<sds-surface label="SOURCE" icon="actions-check" heading="One set"><p>For the whole site.</p></sds-surface>', $this->markup);
+        self::assertStringContainsString('<sds-surface label="SOURCE" icon="actions-check" heading="One set" body="For the whole site."></sds-surface>', $this->markup);
     }
 
     #[Test]
     public function aCardGoesWhereItsLinkGoes(): void
     {
-        self::assertMatchesRegularExpression('~<sds-grid columns="2">\s*<sds-card heading="Guide" href="/guide" label="CHAPTER 01" tag="new" footer="Read it" action="Open the guide"><p>How to set it up\.</p></sds-card>~', $this->markup);
+        self::assertMatchesRegularExpression('~<sds-grid columns="2">\s*<sds-card heading="Guide" href="/guide" label="CHAPTER 01" tag="new" footer="Read it" action="Open the guide" body="How to set it up\."></sds-card>~', $this->markup);
     }
 
     #[Test]
@@ -73,10 +73,10 @@ final class SetsTest extends SiteTestCase
     }
 
     #[Test]
-    public function factsAreADescriptionListInsideTheElement(): void
+    public function factsAreTheEntriesOfTheElement(): void
     {
-        self::assertMatchesRegularExpression('~<sds-facts>\s*<dt>Licence</dt>\s*<dd><p>MIT</p></dd>\s*</sds-facts>~', $this->markup);
-        self::assertMatchesRegularExpression('~<sds-facts>\s*<dt>Term</dt>\s*<dd>What it means</dd>\s*</sds-facts>~', $this->markup);
+        self::assertStringContainsString('<sds-facts entries="[{&quot;term&quot;:&quot;Licence&quot;,&quot;value&quot;:&quot;MIT&quot;}]"></sds-facts>', $this->markup);
+        self::assertStringContainsString('<sds-facts entries="[{&quot;term&quot;:&quot;Term&quot;,&quot;value&quot;:&quot;What it means&quot;}]"></sds-facts>', $this->markup);
     }
 
     #[Test]

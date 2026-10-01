@@ -8,5 +8,5 @@
 <f:section name="Main">
     <f:variable name="href" value="" />
     <f:if condition="{data.header_link}"><f:variable name="href">{f:uri.typolink(parameter: data.header_link)}</f:variable></f:if>
-    <sds-quote {soul:attributes(of: {by: data.header, as: data.subheader, href: href})}>{data.bodytext -> f:format.nl2br()}</sds-quote>
+    <sds-quote {soul:attributes(of: {body: data.bodytext, by: data.header, as: data.subheader, href: href})}></sds-quote>
 </f:section>

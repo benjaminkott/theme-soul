@@ -384,6 +384,189 @@
       <trans-unit id="tx_themesoul_item.soul_decision.chosen">
         <source>Decided</source>
       </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_value">
+        <source>Value</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_max">
+        <source>Maximum</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_ratio">
+        <source>Shape</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_flag">
+        <source>Switch</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_state">
+        <source>State</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.state">
+        <source>State</source>
+      </trans-unit>
+      <trans-unit id="state.ahead">
+        <source>Ahead</source>
+      </trans-unit>
+      <trans-unit id="state.running">
+        <source>Running</source>
+      </trans-unit>
+      <trans-unit id="state.done">
+        <source>Done</source>
+      </trans-unit>
+      <trans-unit id="state.failed">
+        <source>Failed</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_compare">
+        <source>Before and after</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_compare.description">
+        <source>Two pictures side by side, each with its claim.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.assets.soul_compare">
+        <source>Before, then after</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_embed">
+        <source>Embed</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_embed.description">
+        <source>A document from somewhere else, in a frame this page controls.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.header.soul_embed">
+        <source>What the frame holds</source>
+      </trans-unit>
+      <trans-unit id="tt_content.subheader.soul_embed">
+        <source>Caption</source>
+      </trans-unit>
+      <trans-unit id="tt_content.header_link.soul_embed">
+        <source>Address of the document</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_flag.soul_embed">
+        <source>Can take the whole screen</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_copy">
+        <source>Copy</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_copy.description">
+        <source>A value the reader takes away: a command, a key, an address.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.header.soul_copy">
+        <source>What the value is</source>
+      </trans-unit>
+      <trans-unit id="tt_content.subheader.soul_copy">
+        <source>Value</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_progress">
+        <source>Progress</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_progress.description">
+        <source>How far a job has got.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.header.soul_progress">
+        <source>The job</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_value.soul_progress">
+        <source>How far</source>
+      </trans-unit>
+      <trans-unit id="tt_content.subheader.soul_progress">
+        <source>Unit</source>
+      </trans-unit>
+      <trans-unit id="tt_content.bodytext.soul_progress">
+        <source>What bounds the figure</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_flag.soul_progress">
+        <source>Running right now</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_diff">
+        <source>Diff</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_diff.description">
+        <source>The changes to one file, from a unified diff.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.header.soul_diff">
+        <source>Path of the file</source>
+      </trans-unit>
+      <trans-unit id="tt_content.bodytext.soul_diff">
+        <source>Unified diff</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_tree">
+        <source>Directory</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_tree.description">
+        <source>A directory as the shape it has on disk.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.bodytext.soul_tree">
+        <source>One entry per line, indented by level, a note after " # "</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_confval">
+        <source>Configuration value</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_confval.description">
+        <source>One value of a configuration reference.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.header.soul_confval">
+        <source>Name</source>
+      </trans-unit>
+      <trans-unit id="tt_content.subheader.soul_confval">
+        <source>Type</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_value.soul_confval">
+        <source>Default</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_flag.soul_confval">
+        <source>Required</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_swatches">
+        <source>Colours</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_swatches.description">
+        <source>The colours of a brand, each with its value.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_items.soul_swatches">
+        <source>Colours</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_swatches.value">
+        <source>Value</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_swatches.header">
+        <source>Name</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_run">
+        <source>Run</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_run.description">
+        <source>Work in progress, as the steps it consists of.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.subheader.soul_run">
+        <source>Note</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_items.soul_run">
+        <source>Steps</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_run.header">
+        <source>Step</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_run.state">
+        <source>State</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_run.label">
+        <source>Meta</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_run.note">
+        <source>Note</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_run.text">
+        <source>Output</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_dialog">
+        <source>Dialog</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_dialog.description">
+        <source>A button that opens a dialog over the page.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.header.soul_dialog">
+        <source>Heading of the dialog</source>
+      </trans-unit>
+      <trans-unit id="tt_content.bodytext.soul_dialog">
+        <source>Text of the dialog</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

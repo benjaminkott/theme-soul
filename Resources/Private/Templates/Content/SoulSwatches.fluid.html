@@ -1,0 +1,11 @@
+<f:comment>
+    The colours of a brand, each stated as a value with its name.
+</f:comment>
+<f:layout name="Content/Default" />
+<f:section name="Main">
+    <sds-grid variant="dense">
+        <f:for each="{record.tx_themesoul_items}" as="item">
+            <sds-swatch {soul:attributes(of: {value: item.value, name: item.header})}></sds-swatch>
+        </f:for>
+    </sds-grid>
+</f:section>

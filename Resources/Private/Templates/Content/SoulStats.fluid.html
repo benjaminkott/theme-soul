@@ -1,12 +1,12 @@
 <f:comment>
     Numbers stated as facts, read side by side. The note bounds the
-    number, and stands between the tags.
+    number.
 </f:comment>
 <f:layout name="Content/Default" />
 <f:section name="Main">
     <sds-grid {soul:attributes(of: {variant: 'dense', columns: data.tx_themesoul_columns})}>
         <f:for each="{record.tx_themesoul_items}" as="item">
-            <sds-stat {soul:attributes(of: {value: item.value, unit: item.unit, label: item.header, icon: item.icon})}>{item.note}</sds-stat>
+            <sds-stat {soul:attributes(of: {value: item.value, unit: item.unit, label: item.header, icon: item.icon, note: item.note})}></sds-stat>
         </f:for>
     </sds-grid>
 </f:section>

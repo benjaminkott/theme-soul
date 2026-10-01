@@ -1,10 +1,9 @@
 <f:comment>
     A block of code, coloured by its language, with the copy button. The
-    text stands between the tags in a `pre`, so a page with no script
-    still shows it as written. The header is the caption.
+    header is the caption.
 </f:comment>
 <f:layout name="Content/Default" />
 <f:section name="Header" />
 <f:section name="Main">
-    <sds-code {soul:attributes(of: {codeLang: data.tx_themesoul_code_lang, caption: data.header}, flags: {copy: 1})}><pre>{data.bodytext}</pre></sds-code>
+    <sds-code {soul:attributes(of: {codeLang: data.tx_themesoul_code_lang, caption: data.header, source: data.bodytext}, flags: {copy: 1})}></sds-code>
 </f:section>

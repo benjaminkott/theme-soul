@@ -44,7 +44,7 @@ final class ContentElementsTest extends SiteTestCase
     public function aCodeBlockCarriesItsLanguageAndTheTextAsWritten(): void
     {
         self::assertStringContainsString(
-            '<sds-code code-lang="bash" caption="Install the package" copy><pre>composer require typo3/soul</pre></sds-code>',
+            '<sds-code code-lang="bash" caption="Install the package" source="composer require typo3/soul" copy></sds-code>',
             $this->render('/guide/install'),
         );
     }
@@ -53,19 +53,19 @@ final class ContentElementsTest extends SiteTestCase
     public function aQuoteSaysWhoSaidIt(): void
     {
         self::assertStringContainsString(
-            '<sds-quote by="A maintainer" as="of the project" href="https://typo3.org">One package for the whole site.</sds-quote>',
+            '<sds-quote body="One package for the whole site." by="A maintainer" as="of the project" href="https://typo3.org"></sds-quote>',
             $this->render('/guide/install'),
         );
     }
 
     #[Test]
-    public function aTableIsMarkupInsideTheElement(): void
+    public function aTableIsItsColumnsAndRows(): void
     {
         $markup = $this->render('/guide/install');
 
-        self::assertMatchesRegularExpression('~<sds-table scrollable>\s*<table>~', $markup);
-        self::assertStringContainsString('<thead><tr><th scope="col">Name</th><th scope="col">Default</th></tr></thead>', $markup);
-        self::assertStringContainsString('<tr><td>product</td><td>empty</td></tr>', $markup);
+        self::assertSame([['head' => 'Name'], ['head' => 'Default']], self::json($markup, 'sds-table', 'columns'));
+        self::assertSame([['cells' => ['product', 'empty']], ['cells' => ['brand', 'empty']]], self::json($markup, 'sds-table', 'rows'));
+        self::assertMatchesRegularExpression('~<sds-table [^>]*\bscrollable></sds-table>~', $markup);
     }
 
     #[Test]
@@ -92,18 +92,18 @@ final class ContentElementsTest extends SiteTestCase
         $markup = $this->render('/product');
 
         self::assertMatchesRegularExpression(
-            '~<sds-grid>\s*<sds-card heading="Guide" href="/guide">How to set the site up\.</sds-card>\s*<sds-card heading="About" href="/about">Who builds the product\.</sds-card>\s*</sds-grid>~',
+            '~<sds-grid>\s*<sds-card heading="Guide" href="/guide" body="How to set the site up\."></sds-card>\s*<sds-card heading="About" href="/about" body="Who builds the product\."></sds-card>\s*</sds-grid>~',
             $markup,
         );
     }
 
     #[Test]
-    public function aSitemapIsAListThatMarksThePageTheReaderIsOn(): void
+    public function aSitemapIsAListOfLinks(): void
     {
         $markup = $this->render('/guide/configure');
 
-        self::assertStringContainsString('<a href="/guide/configure" aria-current="page">Configure</a>', $markup);
-        self::assertStringContainsString('<a href="/guide/install" >Install</a>', $markup);
+        self::assertMatchesRegularExpression('~<ul>\s*<li>\s*<sds-link label="Install" href="/guide/install"></sds-link>~', $markup);
+        self::assertStringContainsString('<sds-link label="Configure" href="/guide/configure"></sds-link>', $markup);
     }
 
     #[Test]

@@ -1,6 +1,15 @@
 <f:comment>
-    One file as a figure. The picture stands between the tags, so it is on
-    the page before a script runs. The description of the file reference is
-    the caption: the claim the picture makes.
+    One file as a figure. A picture is the element's attributes: the
+    processed file, its text for a reader who cannot see it, and its
+    description as the claim. Audio and video the element cannot name by an
+    attribute, so the player stands between the tags.
 </f:comment>
-<sds-figure {soul:attributes(of: {caption: file.description}, flags: {zoomable: zoom})}><f:switch expression="{file.type}"><f:case value="2"><f:image image="{file}" alt="{file.alternative}" title="{file.title}" maxWidth="1200" loading="{settings.media.lazyLoading}" /></f:case><f:defaultCase><f:media file="{file}" alt="{file.alternative}" title="{file.title}" additionalConfig="{settings.media.additionalConfig}" /></f:defaultCase></f:switch></sds-figure>
+<f:if condition="{file.type} == 2">
+    <f:then>
+        <f:variable name="src">{f:uri.image(image: file, maxWidth: 1200)}</f:variable>
+        <sds-figure {soul:attributes(of: {src: src, alt: file.alternative, caption: file.description}, flags: {zoomable: zoom})}></sds-figure>
+    </f:then>
+    <f:else>
+        <sds-figure {soul:attributes(of: {caption: file.description})}><f:media file="{file}" alt="{file.alternative}" title="{file.title}" additionalConfig="{settings.media.additionalConfig}" /></sds-figure>
+    </f:else>
+</f:if>

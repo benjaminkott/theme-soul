@@ -20,10 +20,14 @@
 * Templates emit the `sds-` elements of the Soul design system. A
   template writes no class the Soul stylesheets do not define, and never
   a part of an element (`sds-x__y`): address the element, let it draw.
-* An element takes lists and maps as JSON attributes. Write them with
-  `{soul:attributes(of: {...})}`, never by hand.
-* Content stands between the tags where an element takes it, so a page
-  with no script still shows it.
+* A template sets an element by its attributes, and writes nothing else
+  it can avoid. Between the tags goes only what an attribute cannot
+  carry: the editor's rich text, a player.
+* Write the attributes with `{soul:attributes(of: {...})}`, never by
+  hand. A list or a map goes over as JSON. A field an editor fills is
+  plain text where it ends in an attribute.
+* Data an element needs in a shape no field has comes from a processor
+  in `Classes/DataProcessing/`, not from a loop in a template.
 * An element has no frame: `.sds-band` and `.sds-body__main` trim their
   first and last child, and a wrapper would be that child.
 

@@ -1,0 +1,9 @@
+<f:comment>
+    The changes to one file. The header is its path, the text a unified
+    diff as a tool prints it.
+</f:comment>
+<f:layout name="Content/Default" />
+<f:section name="Header" />
+<f:section name="Main">
+    <sds-diff {soul:attributes(of: {path: data.header, body: lines})}></sds-diff>
+</f:section>

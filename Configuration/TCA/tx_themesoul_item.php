@@ -143,6 +143,20 @@ return [
                 'renderType' => 'checkboxToggle',
             ],
         ],
+        'state' => [
+            'label' => $labels . 'tx_themesoul_item.state',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    ['label' => $labels . 'state.ahead', 'value' => 'ahead'],
+                    ['label' => $labels . 'state.running', 'value' => 'running'],
+                    ['label' => $labels . 'state.done', 'value' => 'done'],
+                    ['label' => $labels . 'state.failed', 'value' => 'failed'],
+                ],
+                'default' => 'ahead',
+            ],
+        ],
         'tone' => [
             'label' => $labels . 'tx_themesoul_item.tone',
             'config' => [

@@ -18,3 +18,15 @@ services:
   TYPO3\Soul\Theme\DataProcessing\SectionsProcessor:
     tags:
       - { name: 'data.processor', identifier: 'soul-sections' }
+
+  TYPO3\Soul\Theme\DataProcessing\LinesProcessor:
+    tags:
+      - { name: 'data.processor', identifier: 'soul-lines' }
+
+  TYPO3\Soul\Theme\DataProcessing\TableProcessor:
+    tags:
+      - { name: 'data.processor', identifier: 'soul-table' }
+
+  TYPO3\Soul\Theme\DataProcessing\EntriesProcessor:
+    tags:
+      - { name: 'data.processor', identifier: 'soul-entries' }

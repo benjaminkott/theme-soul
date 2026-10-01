@@ -3,7 +3,8 @@
     <f:if condition="{content}">
         <ul>
             <f:for each="{content}" as="element">
-                <li><f:link.page pageUid="{element.data.pid}" section="c{element.data.uid}">{element.data.header}</f:link.page></li>
+                <f:variable name="href"><f:uri.page pageUid="{element.data.pid}" section="c{element.data.uid}" /></f:variable>
+                <li><sds-link {soul:attributes(of: {label: element.data.header, href: href})}></sds-link></li>
             </f:for>
         </ul>
     </f:if>

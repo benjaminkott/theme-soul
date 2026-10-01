@@ -1,0 +1,10 @@
+<f:comment>
+    How far a job has got. The header names the job, the value and the
+    maximum say how far, and the text bounds the figure. Marked as running,
+    the fill carries the hatch: work happens right now.
+</f:comment>
+<f:layout name="Content/Default" />
+<f:section name="Header" />
+<f:section name="Main">
+    <sds-progress {soul:attributes(of: {caption: data.header, label: data.header, value: data.tx_themesoul_value, max: data.tx_themesoul_max, unit: data.subheader, note: data.bodytext}, flags: {pulsing: data.tx_themesoul_flag})}></sds-progress>
+</f:section>
