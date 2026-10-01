@@ -1,0 +1,8 @@
+<f:comment>
+    A file to send with the form. The accepted types come from the form
+    definition. A file sent before an error is not shown again.
+</f:comment>
+<formvh:renderRenderable renderable="{element}">
+    <f:variable name="accept">{element.properties.allowedMimeTypes -> f:join(separator: ',')}</f:variable>
+    <f:render partial="Soul/Control" arguments="{element: element, tag: 'sds-file', kind: 'file', of: {accept: accept}, flags: {multiple: element.properties.multiple}}" />
+</formvh:renderRenderable>

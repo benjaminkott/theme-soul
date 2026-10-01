@@ -1,0 +1,8 @@
+# Where the forms of the tests are, so the form framework reads them.
+name: typo3/theme-soul-fixtures
+label: 'Theme: Soul fixtures'
+priority: 40
+
+persistenceManager:
+  allowedExtensionPaths:
+    1727: 'EXT:theme_soul_fixtures/Resources/Private/Forms/'

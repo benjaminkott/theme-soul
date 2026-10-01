@@ -1,0 +1,4 @@
+<formvh:renderRenderable renderable="{element}">
+    <f:variable name="options" value="{formvh:translateElementProperty(element: element, property: 'options')}" />
+    <f:render partial="Soul/Control" arguments="{element: element, tag: 'sds-select', options: options}" />
+</formvh:renderRenderable>

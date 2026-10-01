@@ -1,0 +1,28 @@
+<f:comment>
+    One field of a form as a system control. The label, the hint, the
+    first error and the native attributes come from the form definition;
+    `soul:form.control` gives each to the element that takes it.
+</f:comment>
+<f:form.validationResults for="{element.rootForm.identifier}.{element.identifier}">
+    <f:variable name="error" value="" />
+    <f:for each="{validationResults.errors}" as="failure" iteration="at">
+        <f:if condition="{at.isFirst}"><f:variable name="error">{formvh:translateElementError(element: element, error: failure)}</f:variable></f:if>
+    </f:for>
+    <f:variable name="label">{formvh:translateElementProperty(element: element, property: '{f:if(condition: labelProperty, then: labelProperty, else: \'label\')}')}</f:variable>
+    <f:variable name="hint">{formvh:translateElementProperty(element: element, property: 'elementDescription')}</f:variable>
+    <f:variable name="property">{element.identifier}{f:if(condition: path, then: '.{path}')}</f:variable>
+    <soul:form.control
+        tag="{tag}"
+        property="{property}"
+        kind="{f:if(condition: kind, then: kind, else: 'value')}"
+        label="{label}"
+        hint="{hint}"
+        error="{error}"
+        fieldId="{element.uniqueIdentifier}{f:if(condition: path, then: '-{path}')}"
+        required="{element.required}"
+        native="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
+        options="{options}"
+        of="{of}"
+        flags="{flags}"
+    />
+</f:form.validationResults>

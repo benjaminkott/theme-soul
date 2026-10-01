@@ -30,11 +30,13 @@
         "phpstan/phpstan-phpunit": "^2.0",
         "phpstan/phpstan-strict-rules": "^2.0",
         "typo3/cms-backend": "^14.3",
+        "typo3/cms-form": "^14.3",
         "typo3/cms-install": "^14.3",
         "typo3/cms-rte-ckeditor": "^14.3",
         "typo3/cms-tstemplate": "^14.3",
         "typo3/coding-standards": "^0.9",
-        "typo3/testing-framework": "^9.0.0"
+        "typo3/testing-framework": "^9.0.0",
+        "typo3/theme-soul-fixtures": "@dev"
     },
     "config": {
         "bin-dir": ".build/bin",
@@ -64,6 +66,12 @@
     "autoload-dev": {
         "psr-4": {
             "TYPO3\\Soul\\Theme\\Tests\\": "Tests"
+        }
+    },
+    "repositories": {
+        "fixtures": {
+            "type": "path",
+            "url": "Tests/Packages/*"
         }
     },
     "minimum-stability": "dev",

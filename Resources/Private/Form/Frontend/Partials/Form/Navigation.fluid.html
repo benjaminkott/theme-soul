@@ -1,0 +1,21 @@
+<f:comment>
+    The way through the pages of a form. The page to go to is a hidden
+    field, so the press itself carries no value and is the system's button.
+    The way back has to name its page on the press: `sds-button` takes no
+    name and no value, so it is the class layer's button.
+</f:comment>
+<div class="sds-actions">
+    <f:if condition="{form.previousEnabledPage}">
+        <f:form.button property="__currentPage" value="{form.previousEnabledPage.index}" formnovalidate="formnovalidate" class="sds-btn sds-btn--secondary">{formvh:translateElementProperty(element: form.currentPage, renderingOptionProperty: 'previousButtonLabel')}</f:form.button>
+    </f:if>
+    <f:if condition="{form.nextEnabledPage}">
+        <f:then>
+            <f:form.hidden property="__currentPage" value="{form.nextEnabledPage.index}" />
+            <sds-button variant="primary" type="submit">{formvh:translateElementProperty(element: form.currentPage, renderingOptionProperty: 'nextButtonLabel')}</sds-button>
+        </f:then>
+        <f:else>
+            <f:form.hidden property="__currentPage" value="{form.pages -> f:count()}" />
+            <sds-button variant="primary" type="submit">{formvh:translateElementProperty(element: form, renderingOptionProperty: 'submitButtonLabel')}</sds-button>
+        </f:else>
+    </f:if>
+</div>

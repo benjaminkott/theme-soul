@@ -1,0 +1,17 @@
+<f:comment>
+    What the reader entered, before the form goes out: the facts of the
+    answer, scanned down the questions.
+</f:comment>
+<formvh:renderRenderable renderable="{page}">
+    <f:if condition="{page.label}">
+        <h2>{formvh:translateElementProperty(element: page, property: 'label')}</h2>
+    </f:if>
+    <sds-facts>
+        <formvh:renderAllFormValues renderable="{page.rootForm}" as="formValue">
+            <f:if condition="!{formValue.isSection}">
+                <dt>{formvh:translateElementProperty(element: formValue.element, property: 'label')}</dt>
+                <dd>{formValue.processedValue -> f:format.nl2br()}</dd>
+            </f:if>
+        </formvh:renderAllFormValues>
+    </sds-facts>
+</formvh:renderRenderable>

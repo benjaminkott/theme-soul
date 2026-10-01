@@ -1,0 +1,10 @@
+<formvh:renderRenderable renderable="{element}">
+    <fieldset id="{element.uniqueIdentifier}">
+        <f:if condition="{element.label}">
+            <legend>{formvh:translateElementProperty(element: element, property: 'label')}</legend>
+        </f:if>
+        <f:for each="{element.elements}" as="element">
+            <f:render partial="{element.templateName}" arguments="{element: element}" />
+        </f:for>
+    </fieldset>
+</formvh:renderRenderable>

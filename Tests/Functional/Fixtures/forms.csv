@@ -1,0 +1,6 @@
+"pages"
+,"uid","pid","title","slug","doktype","sorting"
+,10,1,"Contact","/contact",1,1024
+"tt_content"
+,"uid","pid","CType","header","colPos","sorting","pi_flexform"
+,90,10,"form_formframework","",0,128,"<?xml version=""1.0"" encoding=""utf-8"" standalone=""yes"" ?><T3FlexForms><data><sheet index=""sDEF""><language index=""lDEF""><field index=""settings.persistenceIdentifier""><value index=""vDEF"">EXT:theme_soul_fixtures/Resources/Private/Forms/contact.form.yaml</value></field></language></sheet></data></T3FlexForms>"

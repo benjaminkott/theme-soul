@@ -1,0 +1,20 @@
+# The form templates of the theme, above the core's. A field type the
+# theme has no partial for falls back to the core's own.
+name: typo3/theme-soul
+label: 'Theme: Soul'
+priority: 30
+
+prototypes:
+  standard:
+    formElementsDefinition:
+      Form:
+        renderingOptions:
+          templateRootPaths:
+            1727: 'EXT:theme_soul/Resources/Private/Form/Frontend/Templates/'
+          partialRootPaths:
+            1727: 'EXT:theme_soul/Resources/Private/Form/Frontend/Partials/'
+    finishersDefinition:
+      Confirmation:
+        options:
+          templateRootPaths:
+            1727: 'EXT:theme_soul/Resources/Private/Form/Frontend/Templates/Finishers/Confirmation/'

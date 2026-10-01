@@ -1,0 +1,28 @@
+<f:comment>
+    The form. What stopped it stands at the top, as a list that leads to
+    each field, and every field says it again where its value is.
+</f:comment>
+<formvh:renderRenderable renderable="{form}">
+    <formvh:form
+        object="{form}"
+        action="{form.renderingOptions.controllerAction}"
+        method="{form.renderingOptions.httpMethod}"
+        id="{form.identifier}"
+        class="sds-form"
+        section="{form.identifier}"
+        enctype="{form.renderingOptions.httpEnctype}"
+        addQueryString="{form.renderingOptions.addQueryString}"
+        argumentsToBeExcludedFromQueryString="{form.renderingOptions.argumentsToBeExcludedFromQueryString}"
+        additionalParams="{form.renderingOptions.additionalParams}"
+        additionalAttributes="{formvh:translateElementProperty(element: form, property: 'fluidAdditionalAttributes')}"
+    >
+        <f:form.validationResults for="{form.identifier}">
+            <f:variable name="errors" value="{soul:form.errors(results: validationResults, form: form)}" />
+            <f:if condition="{errors}">
+                <sds-form-errors {soul:attributes(of: {errors: errors}, flags: {announce: 1})}></sds-form-errors>
+            </f:if>
+        </f:form.validationResults>
+        <f:render partial="{form.currentPage.templateName}" arguments="{page: form.currentPage}" />
+        <f:render partial="Form/Navigation" arguments="{form: form}" />
+    </formvh:form>
+</formvh:renderRenderable>

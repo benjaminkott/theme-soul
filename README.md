@@ -105,6 +105,22 @@ under its own labels. The core bullet list with terms is `sds-facts` too.
 The types and the fields `tx_themesoul_*` are off for every site and on
 for a site that takes the set.
 
+## Forms
+
+Where the form framework is installed, the set takes it along, and its
+forms render with the system's controls: `sds-field`, `sds-textarea`,
+`sds-select`, `sds-radio`, `sds-checkbox`, `sds-checkbox-group` and
+`sds-file`. What stopped a form stands at the top in `sds-form-errors`,
+and each field says it again under itself. The confirmation is an
+`sds-note`. `Configuration/Form/Soul/` registers the templates; they
+apply to every form of the installation.
+
+Each control writes a named native field into the page, and the name is
+in the form's request token, as with the core's own fields. A file sent
+before an error is not shown again. The way back to an earlier page of
+the form is the class layer's button, because `sds-button` takes no name
+and no value.
+
 ## Develop it
 
 ```sh
@@ -114,6 +130,9 @@ ddev composer test
 ddev composer cgl:ci
 ddev composer phpstan
 ```
+
+`Tests/Packages/theme_soul_fixtures` holds the forms the tests render,
+and the development instance has it too.
 
 `Build/` pins `@typo3/soul-frontend` and copies its drop-in to
 `Resources/Public/Soul/`. The output is committed, because a Composer

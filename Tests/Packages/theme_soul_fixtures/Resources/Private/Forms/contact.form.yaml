@@ -1,0 +1,71 @@
+identifier: contact
+label: Contact
+type: Form
+prototypeName: standard
+finishers:
+  -
+    identifier: Confirmation
+    options:
+      message: 'The message is on its way.'
+renderingOptions:
+  submitButtonLabel: Send
+renderables:
+  -
+    identifier: page-1
+    label: 'Your message'
+    type: Page
+    renderables:
+      -
+        identifier: name
+        label: Name
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+            autocomplete: name
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        identifier: email
+        label: Email
+        type: Email
+        properties:
+          elementDescription: 'The answer goes here.'
+        validators:
+          -
+            identifier: EmailAddress
+      -
+        identifier: topic
+        label: Topic
+        type: SingleSelect
+        properties:
+          options:
+            question: 'A question'
+            bug: 'A bug'
+      -
+        identifier: reach
+        label: 'How to reach you'
+        type: RadioButton
+        properties:
+          options:
+            mail: Email
+            phone: Phone
+      -
+        identifier: areas
+        label: Areas
+        type: MultiCheckbox
+        properties:
+          options:
+            frontend: Frontend
+            backend: Backend
+      -
+        identifier: message
+        label: Message
+        type: Textarea
+      -
+        identifier: privacy
+        label: 'I agree that the message is stored.'
+        type: Checkbox
+        properties:
+          value: '1'

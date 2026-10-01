@@ -1,11 +1,17 @@
-# The processors the templates read, under the names the
-# TypoScript uses. Everything else in the extension is configuration and
-# templates, and needs no service.
+# Every class is a service, so a view helper gets what it needs injected.
+# The processors stand here once more, under the names the TypoScript
+# uses.
 services:
   _defaults:
     autowire: true
     autoconfigure: true
     public: false
+
+  # Not the list of a form's errors: it needs the form framework, which a
+  # site can go without. It asks for that service when a form renders.
+  TYPO3\Soul\Theme\:
+    resource: '../Classes/*'
+    exclude: '../Classes/ViewHelpers/Form/ErrorsViewHelper.php'
 
   TYPO3\Soul\Theme\DataProcessing\ChromeProcessor:
     tags:

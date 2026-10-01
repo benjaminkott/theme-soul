@@ -1,0 +1,8 @@
+<formvh:renderRenderable renderable="{element}">
+    <f:if condition="{element.label}">
+        <h3>{formvh:translateElementProperty(element: element, property: 'label')}</h3>
+    </f:if>
+    <f:if condition="{element.properties.text}">
+        <p>{formvh:translateElementProperty(element: element, property: 'text') -> f:sanitize.html() -> f:transform.html()}</p>
+    </f:if>
+</formvh:renderRenderable>

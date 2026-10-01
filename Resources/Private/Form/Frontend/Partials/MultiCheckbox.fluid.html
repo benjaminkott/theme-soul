@@ -1,0 +1,8 @@
+<f:comment>
+    Any of these, under one question. A list to pick several from is the
+    same question, so it is the same element.
+</f:comment>
+<formvh:renderRenderable renderable="{element}">
+    <f:variable name="options" value="{formvh:translateElementProperty(element: element, property: 'options')}" />
+    <f:render partial="Soul/Control" arguments="{element: element, tag: 'sds-checkbox-group', kind: 'checks', options: options}" />
+</formvh:renderRenderable>

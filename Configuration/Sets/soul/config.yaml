@@ -1,6 +1,9 @@
 # The set a site configuration names to take the design system. The core's
 # content rendering comes with it, because the templates here override it.
+# The form framework comes with it where it is installed.
 name: typo3/theme-soul
 label: "Theme: Soul"
 dependencies:
   - typo3/fluid-styled-content
+optionalDependencies:
+  - typo3/form
