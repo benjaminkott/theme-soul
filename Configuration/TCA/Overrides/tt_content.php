@@ -10,9 +10,9 @@ defined('TYPO3') or die();
  * The content types the core does not have, each one a system element.
  *
  * The fields are the core's own wherever one fits: the header, the text, the
- * link, the media. Three columns are new, because no core field means a
- * tone, a language or the words on a button. The core makes their database
- * columns out of this file.
+ * link, the media. A column is new where no core field means the thing: a
+ * tone, a language, the words on a button, the entries of a set. The core
+ * makes their database columns out of this file.
  */
 (static function (): void {
     $labels = 'theme_soul.backend_fields:';
@@ -45,6 +45,58 @@ defined('TYPO3') or die();
                     ['bash', 'css', 'diff', 'html', 'javascript', 'json', 'markdown', 'php', 'scss', 'sql', 'text', 'tsconfig', 'twig', 'typescript', 'typoscript', 'xml', 'yaml'],
                 ),
                 'default' => 'text',
+            ],
+        ],
+        /* The entries of a content type that holds a set, in one table for
+           every such type. */
+        'tx_themesoul_items' => [
+            'label' => $labels . 'tt_content.tx_themesoul_items',
+            'config' => [
+                'type' => 'inline',
+                'foreign_table' => 'tx_themesoul_item',
+                'foreign_field' => 'uid_foreign',
+                'foreign_table_field' => 'tablename',
+                'foreign_match_fields' => [
+                    'fieldname' => 'tx_themesoul_items',
+                ],
+                'appearance' => [
+                    'showSynchronizationLink' => false,
+                    'showAllLocalizationLink' => true,
+                    'showPossibleLocalizationRecords' => true,
+                    'expandSingle' => true,
+                    'useSortable' => true,
+                ],
+            ],
+        ],
+        'tx_themesoul_columns' => [
+            'label' => $labels . 'tt_content.tx_themesoul_columns',
+            'description' => $labels . 'tt_content.tx_themesoul_columns.description',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    ['label' => $labels . 'tt_content.tx_themesoul_columns.auto', 'value' => ''],
+                    ['label' => '2', 'value' => '2'],
+                    ['label' => '3', 'value' => '3'],
+                    ['label' => '4', 'value' => '4'],
+                ],
+                'default' => '',
+            ],
+        ],
+        'tx_themesoul_by' => [
+            'label' => $labels . 'tt_content.tx_themesoul_by',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'max' => 100,
+            ],
+        ],
+        'tx_themesoul_due' => [
+            'label' => $labels . 'tt_content.tx_themesoul_due',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'max' => 100,
             ],
         ],
         'tx_themesoul_action' => [
@@ -81,9 +133,91 @@ defined('TYPO3') or die();
             'fields' => 'bodytext,header,subheader,header_link',
             'body' => 'plain',
         ],
+        'soul_accordion' => [
+            'icon' => 'content-accordion',
+            'fields' => 'header,tx_themesoul_items',
+            'items' => 'header,text,marked',
+        ],
+        'soul_tabs' => [
+            'icon' => 'content-tab',
+            'fields' => 'header,tx_themesoul_items',
+            'items' => 'header,icon,text,marked',
+        ],
+        'soul_steps' => [
+            'icon' => 'content-bullets',
+            'fields' => 'header,tx_themesoul_items',
+            'items' => 'header,text,marked',
+        ],
+        'soul_timeline' => [
+            'icon' => 'content-timeline',
+            'fields' => 'header,tx_themesoul_items',
+            'items' => 'label,header,text,marked',
+        ],
+        'soul_stats' => [
+            'icon' => 'content-widget-number',
+            'fields' => 'header,tx_themesoul_columns,tx_themesoul_items',
+            'items' => 'value,unit,header,note,icon',
+        ],
+        'soul_surfaces' => [
+            'icon' => 'content-panel',
+            'fields' => 'header,tx_themesoul_columns,tx_themesoul_items',
+            'items' => 'label,icon,header,text',
+        ],
+        'soul_cards' => [
+            'icon' => 'content-card-group',
+            'fields' => 'header,tx_themesoul_columns,tx_themesoul_items',
+            'items' => 'header,text,link,link_label,media,label,value,icon,note',
+        ],
+        'soul_icons' => [
+            'icon' => 'content-widget-list',
+            'fields' => 'header,tx_themesoul_items',
+            'items' => 'icon,header,link,label',
+        ],
+        'soul_facts' => [
+            'icon' => 'content-listgroup',
+            'fields' => 'header,tx_themesoul_items',
+            'items' => 'header,text',
+        ],
+        'soul_register' => [
+            'icon' => 'content-menu-section',
+            'fields' => 'header,subheader,tx_themesoul_items',
+            'items' => 'header,label,tone,text,note,value',
+        ],
+        'soul_decision' => [
+            'icon' => 'content-idea',
+            'fields' => 'header,subheader,bodytext,tx_themesoul_by,tx_themesoul_due,tx_themesoul_items',
+            'body' => 'plain',
+            'items' => 'value,header,text,marked,chosen',
+        ],
     ];
 
     foreach ($types as $type => $definition) {
+        $overrides = [
+            'bodytext' => [
+                'config' => match ($definition['body'] ?? 'plain') {
+                    'rich' => ['enableRichtext' => true],
+                    'code' => ['enableRichtext' => false, 'fixedFont' => true, 'rows' => 12, 'wrap' => 'off'],
+                    default => ['enableRichtext' => false, 'rows' => 4],
+                },
+            ],
+        ];
+        /* A set shows the fields of an entry that this type reads, each
+           under the name it has here: a question, a tab, a stop. */
+        if (isset($definition['items'])) {
+            $columns = [];
+            foreach (explode(',', $definition['items']) as $field) {
+                $columns[$field]['label'] = $labels . 'tx_themesoul_item.' . $type . '.' . $field;
+            }
+            $overrides['tx_themesoul_items'] = [
+                'label' => $labels . 'tt_content.tx_themesoul_items.' . $type,
+                'config' => [
+                    'overrideChildTca' => [
+                        'types' => ['0' => ['showitem' => $definition['items']]],
+                        'columns' => $columns,
+                    ],
+                ],
+            ];
+        }
         ExtensionManagementUtility::addRecordType(
             [
                 'label' => $labels . 'tt_content.CType.' . $type,
@@ -94,17 +228,7 @@ defined('TYPO3') or die();
             ],
             '--div--;core.form.tabs:general,--palette--;;general,' . $definition['fields']
                 . ',--div--;core.form.tabs:access,--palette--;;hidden,--palette--;;access',
-            [
-                'columnsOverrides' => [
-                    'bodytext' => [
-                        'config' => match ($definition['body']) {
-                            'rich' => ['enableRichtext' => true],
-                            'code' => ['enableRichtext' => false, 'fixedFont' => true, 'rows' => 12, 'wrap' => 'off'],
-                            default => ['enableRichtext' => false, 'rows' => 4],
-                        },
-                    ],
-                ],
-            ],
+            ['columnsOverrides' => $overrides],
         );
     }
 

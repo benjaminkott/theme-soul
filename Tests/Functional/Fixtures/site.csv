@@ -7,6 +7,7 @@
 ,5,1,"Product","/product",1,0,"pagets__SoulBands",384,""
 ,6,1,"About","/about",1,0,"",512,"Who builds the product."
 ,7,1,"Reference","/reference",1,0,"pagets__SoulDocument",640,""
+,8,1,"Components","/components",1,0,"",768,""
 "tt_content"
 ,"uid","pid","CType","header","header_layout","subheader","bodytext","colPos","sorting","layout","tx_themesoul_tone","tx_themesoul_code_lang","tx_themesoul_action","header_link","bullets_type","table_header_position","pages"
 ,10,3,"text","Requirements",0,"","<p>A TYPO3 installation in Composer mode.</p>",0,128,0,"","","","",0,0,""

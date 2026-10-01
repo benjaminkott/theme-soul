@@ -1,0 +1,12 @@
+<f:comment>
+    An instruction read from the top. The element numbers the steps, and
+    a step marked optional says so.
+</f:comment>
+<f:layout name="Content/Default" />
+<f:section name="Main">
+    <sds-steps>
+        <f:for each="{record.tx_themesoul_items}" as="item">
+            <sds-step {soul:attributes(of: {heading: item.header}, flags: {optional: item.marked})}>{item -> f:render.text(field: 'text')}</sds-step>
+        </f:for>
+    </sds-steps>
+</f:section>

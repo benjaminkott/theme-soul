@@ -72,6 +72,21 @@ needs a class the system does not define.
 | `soul_note` | `sds-note` | header, tone, rich text |
 | `soul_code` | `sds-code` | header as the caption, language, code |
 | `soul_quote` | `sds-quote` | text, header as the speaker, subheader as their role, link |
+| `soul_accordion` | `sds-accordion`, `sds-accordion-item` | entries: question, answer, open at the start |
+| `soul_tabs` | `sds-tabs`, `sds-tab-item` | entries: label, icon, panel, open at the start |
+| `soul_steps` | `sds-steps`, `sds-step` | entries: step, what to do, optional |
+| `soul_timeline` | `sds-timeline`, `sds-timeline-stop` | entries: when, heading, text, today stands here |
+| `soul_stats` | `sds-stat` in `sds-grid` | columns; entries: figure, unit, what it counts, what bounds it, icon |
+| `soul_surfaces` | `sds-surface` in `sds-grid` | columns; entries: line over the heading, icon, heading, statement |
+| `soul_cards` | `sds-card` in `sds-grid` | columns; entries: heading, text, link, call to action, picture, line, tag, icon, footer |
+| `soul_icons` | `sds-icon-tile` in `sds-grid` | entries: icon, caption, link, tag |
+| `soul_facts` | `sds-facts` | entries: term, what it says |
+| `soul_register` | `sds-register`, `sds-entry` | subheader as the number prefix; entries: heading, status, tone, text, still to do, origin |
+| `soul_decision` | `sds-decision`, `sds-answer` | header as the question, subheader, lead, decided by, due; entries: key, answer, text, recommended, decided |
+
+The entries of a set are records of `tx_themesoul_item`, edited inline in
+the content element. Each type shows the fields of an entry it reads,
+under its own labels. The core bullet list with terms is `sds-facts` too.
 
 The types and the fields `tx_themesoul_*` are off for every site and on
 for a site that takes the set.

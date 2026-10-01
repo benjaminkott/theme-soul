@@ -1,7 +1,8 @@
 <f:comment>
     The heading at the level the editor chose, the site's default level
     otherwise. The subheader is the lead under it: the system sets a
-    heading and the lead after it as one pair.
+    heading and the lead after it as one pair. A type that reads the
+    subheader as something else passes `lead: 0`.
 </f:comment>
 <f:if condition="{data.header_layout} != 100">
     <f:variable name="header">{record -> f:render.text(field: 'header', optional: true)}</f:variable>
@@ -20,7 +21,7 @@
             <f:defaultCase><h2 id="c{data.uid}"><f:link.typolink parameter="{data.header_link}">{header}</f:link.typolink></h2></f:defaultCase>
         </f:switch>
     </f:if>
-    <f:if condition="{subheader}">
+    <f:if condition="{subheader} && {lead} !== 0">
         <p class="sds-lead">{subheader}</p>
     </f:if>
 </f:if>

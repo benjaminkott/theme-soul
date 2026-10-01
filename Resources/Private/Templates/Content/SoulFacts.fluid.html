@@ -1,0 +1,13 @@
+<f:comment>
+    Facts scanned down the terms. The terms and what they say stand between
+    the tags as a description list.
+</f:comment>
+<f:layout name="Content/Default" />
+<f:section name="Main">
+    <sds-facts>
+        <f:for each="{record.tx_themesoul_items}" as="item">
+            <dt>{item.header}</dt>
+            <dd>{item -> f:render.text(field: 'text')}</dd>
+        </f:for>
+    </sds-facts>
+</f:section>

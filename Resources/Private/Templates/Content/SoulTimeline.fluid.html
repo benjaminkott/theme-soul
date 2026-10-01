@@ -1,0 +1,12 @@
+<f:comment>
+    A plan on the calendar. The stop marked now is where today stands: the
+    stops before it have passed, the ones after it lie ahead.
+</f:comment>
+<f:layout name="Content/Default" />
+<f:section name="Main">
+    <sds-timeline>
+        <f:for each="{record.tx_themesoul_items}" as="item">
+            <sds-timeline-stop {soul:attributes(of: {when: item.label, heading: item.header}, flags: {now: item.marked})}>{item -> f:render.text(field: 'text')}</sds-timeline-stop>
+        </f:for>
+    </sds-timeline>
+</f:section>

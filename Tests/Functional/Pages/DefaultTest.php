@@ -42,7 +42,7 @@ final class DefaultTest extends SiteTestCase
 
         self::assertSame('Example', self::attribute($markup, 'sds-nav-main', 'product'));
         self::assertSame('Example', $menu['label']);
-        self::assertSame(['Guide', 'Product', 'About', 'Reference'], array_column($menu['items'], 'label'));
+        self::assertSame(['Guide', 'Product', 'About', 'Reference', 'Components'], array_column($menu['items'], 'label'));
         self::assertTrue($menu['items'][0]['front']);
         self::assertTrue($menu['items'][0]['here']);
         self::assertTrue($menu['items'][0]['items'][0]['current']);
@@ -90,7 +90,7 @@ final class DefaultTest extends SiteTestCase
         $groups = self::json($markup, 'sds-footer', 'groups');
 
         self::assertSame(['Example', 'Guide'], array_column($groups, 'label'));
-        self::assertSame(['Product', 'About', 'Reference'], array_column($groups[0]['items'], 'label'));
+        self::assertSame(['Product', 'About', 'Reference', 'Components'], array_column($groups[0]['items'], 'label'));
         self::assertSame(['Install', 'Configure'], array_column($groups[1]['items'], 'label'));
         self::assertSame('A site for the tests.', self::attribute($markup, 'sds-footer', 'note'));
         self::assertSame('1.0.0', self::attribute($markup, 'sds-footer', 'version'));

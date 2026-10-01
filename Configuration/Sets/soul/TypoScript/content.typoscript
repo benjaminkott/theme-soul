@@ -30,3 +30,36 @@ tt_content.soul_code.templateName = SoulCode
 
 tt_content.soul_quote =< lib.contentElement
 tt_content.soul_quote.templateName = SoulQuote
+
+tt_content.soul_accordion =< lib.contentElement
+tt_content.soul_accordion.templateName = SoulAccordion
+
+tt_content.soul_tabs =< lib.contentElement
+tt_content.soul_tabs.templateName = SoulTabs
+
+tt_content.soul_steps =< lib.contentElement
+tt_content.soul_steps.templateName = SoulSteps
+
+tt_content.soul_timeline =< lib.contentElement
+tt_content.soul_timeline.templateName = SoulTimeline
+
+tt_content.soul_stats =< lib.contentElement
+tt_content.soul_stats.templateName = SoulStats
+
+tt_content.soul_surfaces =< lib.contentElement
+tt_content.soul_surfaces.templateName = SoulSurfaces
+
+tt_content.soul_cards =< lib.contentElement
+tt_content.soul_cards.templateName = SoulCards
+
+tt_content.soul_icons =< lib.contentElement
+tt_content.soul_icons.templateName = SoulIcons
+
+tt_content.soul_facts =< lib.contentElement
+tt_content.soul_facts.templateName = SoulFacts
+
+tt_content.soul_register =< lib.contentElement
+tt_content.soul_register.templateName = SoulRegister
+
+tt_content.soul_decision =< lib.contentElement
+tt_content.soul_decision.templateName = SoulDecision

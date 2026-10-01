@@ -1,0 +1,14 @@
+<f:comment>
+    The question a decision puts, who decides and by when, and the answers
+    it can take. The header is the question, the subheader the line over
+    it, and the text the sentence that leads into the answers.
+</f:comment>
+<f:layout name="Content/Default" />
+<f:section name="Header" />
+<f:section name="Main">
+    <sds-decision {soul:attributes(of: {question: data.header, label: data.subheader, lead: data.bodytext, by: data.tx_themesoul_by, due: data.tx_themesoul_due})}>
+        <f:for each="{record.tx_themesoul_items}" as="item">
+            <sds-answer {soul:attributes(of: {key: item.value, heading: item.header}, flags: {recommended: item.marked, decided: item.chosen})}>{item -> f:render.text(field: 'text')}</sds-answer>
+        </f:for>
+    </sds-decision>
+</f:section>

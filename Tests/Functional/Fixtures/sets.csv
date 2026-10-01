@@ -1,0 +1,32 @@
+"tt_content"
+,"uid","pid","CType","header","header_layout","subheader","bodytext","colPos","sorting","tx_themesoul_items","tx_themesoul_columns","tx_themesoul_by","tx_themesoul_due","bullets_type"
+,50,8,"soul_accordion","Questions",0,"","",0,128,2,"","","",0
+,51,8,"soul_tabs","Install",0,"","",0,256,2,"","","",0
+,52,8,"soul_steps","Set it up",0,"","",0,384,2,"","","",0
+,53,8,"soul_timeline","Plan",0,"","",0,512,2,"","","",0
+,54,8,"soul_stats","Figures",0,"","",0,640,1,"3","","",0
+,55,8,"soul_surfaces","Statements",0,"","",0,768,1,"","","",0
+,56,8,"soul_cards","Cards",0,"","",0,896,1,"2","","",0
+,57,8,"soul_icons","Icons",0,"","",0,1024,1,"","","",0
+,58,8,"soul_facts","Facts",0,"","",0,1152,1,"","","",0
+,59,8,"soul_register","Findings",0,"F","",0,1280,1,"","","",0
+,60,8,"soul_decision","Which database does the site use?",0,"Decision 4","Two answers, weighed.",0,1408,2,"","The maintainers","2026-12-01",0
+,61,8,"bullets","Terms",0,"","Term|What it means",0,1536,0,"","","",2
+"tx_themesoul_item"
+,"uid","pid","uid_foreign","tablename","fieldname","sorting_foreign","header","text","label","value","unit","note","link","link_label","icon","marked","chosen","tone"
+,1,8,50,"tt_content","tx_themesoul_items",1,"Does it need a build?","<p>No.</p>","","","","","","","",0,0,""
+,2,8,50,"tt_content","tx_themesoul_items",2,"Does it need Node?","<p>Only to update the drop-in.</p>","","","","","","","",1,0,""
+,3,8,51,"tt_content","tx_themesoul_items",1,"Composer","<p>composer require</p>","","","","","","","actions-terminal",1,0,""
+,4,8,51,"tt_content","tx_themesoul_items",2,"Classic","<p>Upload the package.</p>","","","","","","","",0,0,""
+,5,8,52,"tt_content","tx_themesoul_items",1,"Require the package","<p>Run composer.</p>","","","","","","","",0,0,""
+,6,8,52,"tt_content","tx_themesoul_items",2,"Choose a layout","<p>Per page.</p>","","","","","","","",1,0,""
+,7,8,53,"tt_content","tx_themesoul_items",1,"First release","<p>The site set.</p>","2026 Q3","","","","","","",0,0,""
+,8,8,53,"tt_content","tx_themesoul_items",2,"Every element","<p>All of them.</p>","2026 Q4","","","","","","",1,0,""
+,9,8,54,"tt_content","tx_themesoul_items",1,"content types","","","15","","with their own fields","","","actions-list",0,0,""
+,10,8,55,"tt_content","tx_themesoul_items",1,"One set","<p>For the whole site.</p>","SOURCE","","","","","","actions-check",0,0,""
+,11,8,56,"tt_content","tx_themesoul_items",1,"Guide","<p>How to set it up.</p>","CHAPTER 01","new","","Read it","t3://page?uid=2","Open the guide","",0,0,""
+,12,8,57,"tt_content","tx_themesoul_items",1,"","","BiDi","","","","t3://page?uid=2","","actions-arrow-end",0,0,""
+,13,8,58,"tt_content","tx_themesoul_items",1,"Licence","<p>MIT</p>","","","","","","","",0,0,""
+,14,8,59,"tt_content","tx_themesoul_items",1,"The bar wraps at 600px","<p>It must shed instead.</p>","open","before the change","","Fix the order","","","",0,0,"warn"
+,15,8,60,"tt_content","tx_themesoul_items",1,"MariaDB","<p>What the host has.</p>","","A","","","","","",1,0,""
+,16,8,60,"tt_content","tx_themesoul_items",2,"SQLite","<p>One file.</p>","","B","","","","","",0,1,""

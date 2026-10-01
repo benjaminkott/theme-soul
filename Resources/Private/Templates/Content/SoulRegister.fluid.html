@@ -1,0 +1,16 @@
+<f:comment>
+    A list a reader cites: numbered, addressed, and scanned before the
+    entries. The subheader is the prefix of the numbers. An entry with
+    something to do goes on the list of what is to do.
+</f:comment>
+<f:layout name="Content/Default" />
+<f:section name="Header">
+    <f:render partial="Content/Header" arguments="{data: data, record: record, settings: settings, lead: 0}" />
+</f:section>
+<f:section name="Main">
+    <sds-register {soul:attributes(of: {name: 'register-{data.uid}', prefix: data.subheader})}>
+        <f:for each="{record.tx_themesoul_items}" as="item">
+            <sds-entry {soul:attributes(of: {heading: item.header, label: item.label, tone: item.tone, todo: item.note, origin: item.value})}>{item -> f:render.text(field: 'text')}</sds-entry>
+        </f:for>
+    </sds-register>
+</f:section>

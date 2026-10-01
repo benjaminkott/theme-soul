@@ -1,0 +1,22 @@
+<f:comment>
+    Ways into something, written by hand: a heading, a sentence, a picture
+    and where the card goes. The text stands between the tags.
+</f:comment>
+<f:layout name="Content/Default" />
+<f:section name="Main">
+    <sds-grid {soul:attributes(of: {columns: data.tx_themesoul_columns})}>
+        <f:for each="{record.tx_themesoul_items}" as="item">
+            <f:variable name="href" value="" />
+            <f:if condition="{item.link}"><f:variable name="href">{f:uri.typolink(parameter: item.link)}</f:variable></f:if>
+            <f:variable name="picture" value="" />
+            <f:variable name="alt" value="" />
+            <f:for each="{item.media}" as="file" iteration="at">
+                <f:if condition="{at.isFirst}">
+                    <f:variable name="picture">{f:uri.image(image: file, maxWidth: 800)}</f:variable>
+                    <f:variable name="alt">{file.alternative}</f:variable>
+                </f:if>
+            </f:for>
+            <sds-card {soul:attributes(of: {heading: item.header, href: href, src: picture, alt: alt, label: item.label, tag: item.value, icon: item.icon, footer: item.note, action: item.link_label})}>{item -> f:render.text(field: 'text')}</sds-card>
+        </f:for>
+    </sds-grid>
+</f:section>

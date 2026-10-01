@@ -6,10 +6,14 @@ TCEFORM.pages {
 }
 
 TCEFORM.tt_content {
-  CType.removeItems := removeFromList(soul_hero,soul_note,soul_code,soul_quote)
+  CType.removeItems := removeFromList(soul_hero,soul_note,soul_code,soul_quote,soul_accordion,soul_tabs,soul_steps,soul_timeline,soul_stats,soul_surfaces,soul_cards,soul_icons,soul_facts,soul_register,soul_decision)
   tx_themesoul_tone.disabled = 0
   tx_themesoul_code_lang.disabled = 0
   tx_themesoul_action.disabled = 0
+  tx_themesoul_items.disabled = 0
+  tx_themesoul_columns.disabled = 0
+  tx_themesoul_by.disabled = 0
+  tx_themesoul_due.disabled = 0
 
   # The fields the templates do not read. A frame, a space or an alignment
   # each needs a class the system does not define, so an editor gets no

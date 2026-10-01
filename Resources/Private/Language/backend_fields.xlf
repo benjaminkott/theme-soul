@@ -60,6 +60,330 @@
       <trans-unit id="tt_content.layout.div.quiet">
         <source>Next band on the quiet ground</source>
       </trans-unit>
+      <trans-unit id="tx_themesoul_item">
+        <source>Entry</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.header">
+        <source>Heading</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.text">
+        <source>Text</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.label">
+        <source>Line over the heading</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.value">
+        <source>Value</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.unit">
+        <source>Unit</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.note">
+        <source>Note</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.link">
+        <source>Link</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.link_label">
+        <source>Link label</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.icon">
+        <source>Icon</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.icon.description">
+        <source>The identifier of a TYPO3 icon, for example actions-check-circle.</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.media">
+        <source>Picture</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.marked">
+        <source>Marked</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.chosen">
+        <source>Chosen</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.tone">
+        <source>Tone</source>
+      </trans-unit>
+      <trans-unit id="tone.none">
+        <source>None</source>
+      </trans-unit>
+      <trans-unit id="tone.accent">
+        <source>Accent</source>
+      </trans-unit>
+      <trans-unit id="tone.ok">
+        <source>Result</source>
+      </trans-unit>
+      <trans-unit id="tone.warn">
+        <source>Warning</source>
+      </trans-unit>
+      <trans-unit id="tone.error">
+        <source>Error</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_items">
+        <source>Entries</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_columns">
+        <source>Columns</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_columns.description">
+        <source>How many stand side by side where the room permits. A narrower room takes fewer.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_columns.auto">
+        <source>As many as fit</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_by">
+        <source>Decided by</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_due">
+        <source>Due</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_accordion">
+        <source>Accordion</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_accordion.description">
+        <source>Questions with their answers folded behind them.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_items.soul_accordion">
+        <source>Questions</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_accordion.header">
+        <source>Question</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_accordion.text">
+        <source>Answer</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_accordion.marked">
+        <source>Open at the start</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_tabs">
+        <source>Tabs</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_tabs.description">
+        <source>Panels behind tabs, one open at a time.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_items.soul_tabs">
+        <source>Tabs</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_tabs.header">
+        <source>Tab label</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_tabs.icon">
+        <source>Icon</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_tabs.text">
+        <source>Panel</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_tabs.marked">
+        <source>Open at the start</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_steps">
+        <source>Steps</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_steps.description">
+        <source>An instruction read from the top, numbered down one rail.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_items.soul_steps">
+        <source>Steps</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_steps.header">
+        <source>Step</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_steps.text">
+        <source>What to do</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_steps.marked">
+        <source>Optional</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_timeline">
+        <source>Timeline</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_timeline.description">
+        <source>A plan on the calendar: dated stops, and where today stands among them.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_items.soul_timeline">
+        <source>Stops</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_timeline.label">
+        <source>When</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_timeline.header">
+        <source>Heading</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_timeline.text">
+        <source>What it holds</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_timeline.marked">
+        <source>Today stands here</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_stats">
+        <source>Figures</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_stats.description">
+        <source>Numbers stated as facts, side by side.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_items.soul_stats">
+        <source>Figures</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_stats.value">
+        <source>Figure</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_stats.unit">
+        <source>Unit</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_stats.header">
+        <source>What it counts</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_stats.note">
+        <source>What bounds it</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_stats.icon">
+        <source>Icon</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_surfaces">
+        <source>Statements</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_surfaces.description">
+        <source>Statements side by side, each on a plane of its own.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_items.soul_surfaces">
+        <source>Statements</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_surfaces.label">
+        <source>Line over the heading</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_surfaces.icon">
+        <source>Icon</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_surfaces.header">
+        <source>Heading</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_surfaces.text">
+        <source>Statement</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_cards">
+        <source>Cards</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_cards.description">
+        <source>Ways into something, written by hand: a heading, a sentence, a picture.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_items.soul_cards">
+        <source>Cards</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_cards.header">
+        <source>Heading</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_cards.text">
+        <source>Text</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_cards.link">
+        <source>Where the card goes</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_cards.link_label">
+        <source>Call to action</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_cards.media">
+        <source>Picture</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_cards.label">
+        <source>Line over the heading</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_cards.value">
+        <source>Tag</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_cards.icon">
+        <source>Icon</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_cards.note">
+        <source>Footer</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_icons">
+        <source>Icons</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_icons.description">
+        <source>Glyphs in a wall, each with its identifier or a caption.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_items.soul_icons">
+        <source>Icons</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_icons.icon">
+        <source>Icon</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_icons.header">
+        <source>Caption</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_icons.link">
+        <source>Link</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_icons.label">
+        <source>Tag</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_facts">
+        <source>Facts</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_facts.description">
+        <source>Facts scanned down the terms.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_items.soul_facts">
+        <source>Facts</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_facts.header">
+        <source>Term</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_facts.text">
+        <source>What it says</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_register">
+        <source>Register</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_register.description">
+        <source>A numbered list a reader cites, with what is still to do.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_items.soul_register">
+        <source>Entries</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_register.header">
+        <source>Heading</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_register.label">
+        <source>Status</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_register.tone">
+        <source>Tone of the status</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_register.text">
+        <source>Text</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_register.note">
+        <source>Still to do</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_register.value">
+        <source>Origin</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_decision">
+        <source>Decision</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_decision.description">
+        <source>The question a decision puts, and the answers it can take.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_items.soul_decision">
+        <source>Answers</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_decision.value">
+        <source>Key</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_decision.header">
+        <source>Answer</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_decision.text">
+        <source>What it means</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_decision.marked">
+        <source>Recommended</source>
+      </trans-unit>
+      <trans-unit id="tx_themesoul_item.soul_decision.chosen">
+        <source>Decided</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

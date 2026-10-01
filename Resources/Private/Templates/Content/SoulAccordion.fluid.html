@@ -1,0 +1,12 @@
+<f:comment>
+    Questions with their answers folded behind them. An answer stands
+    between the tags, so a page with no script and a printed page carry it.
+</f:comment>
+<f:layout name="Content/Default" />
+<f:section name="Main">
+    <sds-accordion>
+        <f:for each="{record.tx_themesoul_items}" as="item">
+            <sds-accordion-item {soul:attributes(of: {question: item.header}, flags: {open: item.marked})}>{item -> f:render.text(field: 'text')}</sds-accordion-item>
+        </f:for>
+    </sds-accordion>
+</f:section>
