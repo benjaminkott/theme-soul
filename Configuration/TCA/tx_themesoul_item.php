@@ -119,6 +119,7 @@ return [
                 'type' => 'input',
                 'size' => 30,
                 'max' => 100,
+                'placeholder' => 'actions-check',
             ],
         ],
         'media' => [
