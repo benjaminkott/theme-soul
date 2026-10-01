@@ -1,0 +1,13 @@
+<f:comment>
+    The slides of the page, one after the other at the window's size. The
+    deck holds no copy: it lends each slide of the page the stage and puts
+    it back where it stood. The button opens it at the first.
+</f:comment>
+<f:layout name="Content/Default" />
+<f:section name="Header" />
+<f:section name="Main">
+    <f:variable name="signet" value="" />
+    <f:if condition="{settings.soul.signet}"><f:variable name="signet">{f:uri.resource(path: settings.soul.signet)}</f:variable></f:if>
+    <sds-button {soul:attributes(of: {variant: 'secondary', for: 'deck-{data.uid}'})}>{data.tx_themesoul_action}</sds-button>
+    <sds-deck {soul:attributes(of: {id: 'deck-{data.uid}', from: 'main-content', label: data.header, brand: settings.soul.brand, product: settings.soul.product, signet: signet}, flags: {numbered: 1})}></sds-deck>
+</f:section>

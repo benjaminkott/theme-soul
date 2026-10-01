@@ -1,3 +1,15 @@
+<f:comment>
+    A number. With `appearance: range` in the form definition it is a value
+    picked along a run, between the minimum and the maximum the definition
+    gives, with its unit beside it.
+</f:comment>
 <formvh:renderRenderable renderable="{element}">
-    <f:render partial="Soul/Control" arguments="{element: element, tag: 'sds-field', of: {type: 'number'}}" />
+    <f:if condition="{element.properties.appearance} == 'range'">
+        <f:then>
+            <f:render partial="Soul/Control" arguments="{element: element, tag: 'sds-range', of: {unit: element.properties.unit}}" />
+        </f:then>
+        <f:else>
+            <f:render partial="Soul/Control" arguments="{element: element, tag: 'sds-field', of: {type: 'number'}}" />
+        </f:else>
+    </f:if>
 </formvh:renderRenderable>

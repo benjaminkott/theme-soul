@@ -10,6 +10,13 @@ lib.contentElement {
   # the contents beside a column, and the pills across a band.
   variables.pageLayout = TEXT
   variables.pageLayout.data = pagelayout
+
+  # What a slide and a deck say in every foot.
+  settings.soul {
+    product = {$soul.product}
+    brand = {$soul.brand}
+    signet = {$soul.signet}
+  }
 }
 
 tt_content.menu_section.dataProcessing.1727 = soul-sections
@@ -132,3 +139,13 @@ tt_content.soul_run {
     output = text
   }
 }
+
+tt_content.soul_slide =< lib.contentElement
+tt_content.soul_slide {
+  templateName = SoulSlide
+  dataProcessing.10 = files
+  dataProcessing.10.references.fieldName = assets
+}
+
+tt_content.soul_deck =< lib.contentElement
+tt_content.soul_deck.templateName = SoulDeck

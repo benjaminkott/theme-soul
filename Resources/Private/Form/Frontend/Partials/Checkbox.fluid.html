@@ -1,3 +1,9 @@
+<f:comment>
+    One thing that is either so or not. With `appearance: switch` in the
+    form definition it is a setting that takes effect where it stands.
+</f:comment>
 <formvh:renderRenderable renderable="{element}">
-    <f:render partial="Soul/Control" arguments="{element: element, tag: 'sds-checkbox', kind: 'check'}" />
+    <f:variable name="tag" value="sds-checkbox" />
+    <f:if condition="{element.properties.appearance} == 'switch'"><f:variable name="tag" value="sds-switch" /></f:if>
+    <f:render partial="Soul/Control" arguments="{element: element, tag: tag, kind: 'check'}" />
 </formvh:renderRenderable>

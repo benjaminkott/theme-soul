@@ -149,6 +149,18 @@ defined('TYPO3') or die();
                 'default' => 'running',
             ],
         ],
+        'tx_themesoul_kind' => [
+            'label' => $labels . 'tt_content.tx_themesoul_kind',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => array_map(
+                    static fn(string $kind): array => ['label' => $labels . 'tt_content.tx_themesoul_kind.' . $kind, 'value' => $kind],
+                    ['content', 'cover', 'section', 'statement', 'figure', 'speaker', 'closing'],
+                ),
+                'default' => 'content',
+            ],
+        ],
         'tx_themesoul_action' => [
             'label' => $labels . 'tt_content.tx_themesoul_action',
             'description' => $labels . 'tt_content.tx_themesoul_action.description',
@@ -297,6 +309,16 @@ defined('TYPO3') or die();
             'fields' => 'tx_themesoul_action,header,bodytext',
             'labels' => 'header,bodytext',
         ],
+        'soul_slide' => [
+            'icon' => 'content-carousel-item-textandimage',
+            'fields' => 'tx_themesoul_kind,subheader,header,bodytext,assets,tx_themesoul_flag',
+            'labels' => 'subheader,bodytext,assets,tx_themesoul_flag',
+        ],
+        'soul_deck' => [
+            'icon' => 'content-carousel',
+            'fields' => 'header,tx_themesoul_action',
+            'labels' => 'header,tx_themesoul_action',
+        ],
     ];
 
     foreach ($types as $type => $definition) {
@@ -316,6 +338,9 @@ defined('TYPO3') or die();
         }
         if ($type === 'soul_compare') {
             $overrides['assets']['config'] = ['minitems' => 2, 'maxitems' => 2];
+        }
+        if ($type === 'soul_slide') {
+            $overrides['assets']['config'] = ['maxitems' => 1];
         }
         /* A set shows the fields of an entry that this type reads, each
            under the name it has here: a question, a tab, a stop. */

@@ -52,9 +52,19 @@ final class FormTest extends SiteTestCase
     }
 
     #[Test]
+    public function anAppearanceTurnsAFieldIntoTheControlItNames(): void
+    {
+        $markup = $this->render('/contact');
+
+        self::assertMatchesRegularExpression('~<sds-switch name="tx_form_formframework\[contact-90\]\[digest\]" label="Send me the digest" value="1"></sds-switch>~', $markup);
+        self::assertMatchesRegularExpression('~<sds-range name="tx_form_formframework\[contact-90\]\[urgency\]" caption="Urgency" field-id="contact-90-urgency" min="0" max="100" step="10" unit="%"~', $markup);
+        self::assertMatchesRegularExpression('~<sds-field-group>\s*<sds-field name="tx_form_formframework\[contact-90\]\[secret\]\[password\]"[^>]*type="password"></sds-field>\s*<sds-field name="tx_form_formframework\[contact-90\]\[secret\]\[confirmation\]" caption="The password again"~', $markup);
+    }
+
+    #[Test]
     public function aRefusedFormSaysWhatStoppedItAtTheTopAndAtTheField(): void
     {
-        $markup = $this->submit($this->render('/contact'), ['email' => 'not an address']);
+        $markup = $this->submit($this->render('/contact'), ['email' => 'not an address', 'secret' => ['password' => '', 'confirmation' => '']]);
 
         $errors = self::json($markup, 'sds-form-errors', 'errors');
         self::assertSame(['contact-90-name', 'contact-90-email'], array_column($errors, 'for'));
@@ -65,7 +75,7 @@ final class FormTest extends SiteTestCase
     #[Test]
     public function aFormThatWentOutSaysSoInANote(): void
     {
-        $markup = $this->submit($this->render('/contact'), ['name' => 'Ada', 'email' => 'ada@example.org', 'areas' => ['frontend']]);
+        $markup = $this->submit($this->render('/contact'), ['name' => 'Ada', 'email' => 'ada@example.org', 'areas' => ['frontend'], 'secret' => ['password' => 'a long secret', 'confirmation' => 'a long secret']]);
 
         self::assertMatchesRegularExpression('~<sds-note tone="ok" id="contact-90">\s*The message is on its way\.\s*</sds-note>~', $markup);
     }

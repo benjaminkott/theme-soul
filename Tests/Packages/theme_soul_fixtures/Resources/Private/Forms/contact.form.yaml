@@ -69,3 +69,26 @@ renderables:
         type: Checkbox
         properties:
           value: '1'
+      -
+        identifier: digest
+        label: 'Send me the digest'
+        type: Checkbox
+        properties:
+          appearance: switch
+      -
+        identifier: urgency
+        label: Urgency
+        type: Number
+        properties:
+          appearance: range
+          unit: '%'
+          fluidAdditionalAttributes:
+            min: '0'
+            max: '100'
+            step: '10'
+      -
+        identifier: secret
+        label: Password
+        type: AdvancedPassword
+        properties:
+          confirmationLabel: 'The password again'

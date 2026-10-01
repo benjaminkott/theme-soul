@@ -34,6 +34,8 @@ final class ControlViewHelper extends AbstractFormFieldViewHelper
         'sds-select' => ['required', 'caption', 'hint', 'error', 'fieldId'],
         'sds-file' => ['required', 'caption', 'hint', 'error', 'fieldId', 'accept'],
         'sds-checkbox' => ['required', 'label', 'hint'],
+        'sds-switch' => ['label', 'hint'],
+        'sds-range' => ['caption', 'hint', 'fieldId', 'min', 'max', 'step'],
         'sds-checkbox-group' => ['legend', 'hint'],
         'sds-radio' => ['required', 'legend', 'hint'],
     ];

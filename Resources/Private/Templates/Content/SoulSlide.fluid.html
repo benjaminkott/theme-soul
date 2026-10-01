@@ -1,0 +1,31 @@
+<f:comment>
+    One 16:9 frame. In the column it stands as a picture at the column's
+    width; a deck on the page plays it at the window's size. A figure
+    slide shows its file in the frame, a speaker slide as the portrait.
+</f:comment>
+<f:layout name="Content/Default" />
+<f:section name="Header" />
+<f:section name="Main">
+    <f:variable name="src" value="" />
+    <f:variable name="portrait" value="" />
+    <f:if condition="{files.0}">
+        <f:if condition="{data.tx_themesoul_kind} == 'speaker'">
+            <f:then><f:variable name="portrait">{f:uri.image(image: files.0, maxWidth: 800)}</f:variable></f:then>
+            <f:else><f:variable name="src">{f:uri.image(image: files.0, maxWidth: 1600)}</f:variable></f:else>
+        </f:if>
+    </f:if>
+    <f:variable name="ground" value="" />
+    <f:if condition="{data.tx_themesoul_flag}"><f:variable name="ground" value="terminal" /></f:if>
+    <sds-slide {soul:attributes(of: {
+        kind: data.tx_themesoul_kind,
+        ground: ground,
+        eyebrow: data.subheader,
+        heading: data.header,
+        lead: data.bodytext,
+        src: src,
+        portrait: portrait,
+        alt: files.0.alternative,
+        brand: settings.soul.brand,
+        product: settings.soul.product
+    }, flags: {shrink: 1})}></sds-slide>
+</f:section>

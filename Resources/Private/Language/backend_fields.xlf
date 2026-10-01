@@ -567,6 +567,60 @@
       <trans-unit id="tt_content.bodytext.soul_dialog">
         <source>Text of the dialog</source>
       </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_kind">
+        <source>Kind of slide</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_kind.content">
+        <source>Content</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_kind.cover">
+        <source>Cover</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_kind.section">
+        <source>Section</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_kind.statement">
+        <source>Statement</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_kind.figure">
+        <source>Figure</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_kind.speaker">
+        <source>Speaker</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_kind.closing">
+        <source>Closing</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_slide">
+        <source>Slide</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_slide.description">
+        <source>One 16:9 frame, set as a picture in the column and played by a deck.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.subheader.soul_slide">
+        <source>Line over the heading</source>
+      </trans-unit>
+      <trans-unit id="tt_content.bodytext.soul_slide">
+        <source>Lead</source>
+      </trans-unit>
+      <trans-unit id="tt_content.assets.soul_slide">
+        <source>Picture or portrait</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_flag.soul_slide">
+        <source>On the terminal ground</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_deck">
+        <source>Slides of this page</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_deck.description">
+        <source>A button that plays the slides of the page, one after the other.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.header.soul_deck">
+        <source>Name of the deck</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_action.soul_deck">
+        <source>Button label</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

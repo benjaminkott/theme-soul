@@ -97,6 +97,8 @@ A list, a table or a tree goes over as JSON in an attribute.
 | `soul_swatches` | `sds-swatch` in `sds-grid` | entries: value, name |
 | `soul_run` | `sds-run` | header, subheader as the note, verdict; entries: step, state, meta, note, output |
 | `soul_dialog` | `sds-button`, `sds-dialog` | button label, header as the heading, text |
+| `soul_slide` | `sds-slide` | kind, subheader as the line over the heading, header, text as the lead, one file, terminal ground |
+| `soul_deck` | `sds-button`, `sds-deck` | header as the name of the deck, button label; plays the slides of the page |
 
 The entries of a set are records of `tx_themesoul_item`, edited inline in
 the content element. Each type shows the fields of an entry it reads,
@@ -115,11 +117,24 @@ and each field says it again under itself. The confirmation is an
 `sds-note`. `Configuration/Form/Soul/` registers the templates; they
 apply to every form of the installation.
 
+A checkbox with `appearance: switch` in the form definition is an
+`sds-switch`, a number with `appearance: range` an `sds-range` with the
+definition's `unit`. The password with its confirmation stands in an
+`sds-field-group`.
+
 Each control writes a named native field into the page, and the name is
 in the form's request token, as with the core's own fields. A file sent
 before an error is not shown again. The way back to an earlier page of
 the form is the class layer's button, because `sds-button` takes no name
 and no value.
+
+## Every element has a place
+
+`npm run build` in `Build/` ends on a check: every element of the npm
+package is written by a template, or drawn by an element a template
+writes. `sds-modal` and `sds-nav-pagination` stay out by name, with the
+reason, in `Build/coverage.js`. A new element in the package fails the
+build until it has a place or a reason.
 
 ## Develop it
 

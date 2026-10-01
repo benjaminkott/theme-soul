@@ -88,4 +88,17 @@ final class BlocksTest extends SiteTestCase
         self::assertStringContainsString('<sds-button variant="secondary" for="dialog-78">Read the boundary</sds-button>', $this->markup);
         self::assertStringContainsString('<sds-dialog id="dialog-78" heading="What the theme leaves out" body="The TYPO3 backend, and official TYPO3 sites." cancel-label="Close"></sds-dialog>', $this->markup);
     }
+
+    #[Test]
+    public function aSlideStandsInTheColumnAtTheColumnsWidth(): void
+    {
+        self::assertStringContainsString('<sds-slide kind="statement" ground="terminal" eyebrow="Why" heading="One set for the whole site" lead="Every page from the same tokens." product="Example" shrink></sds-slide>', $this->markup);
+    }
+
+    #[Test]
+    public function aDeckPlaysTheSlidesOfThePage(): void
+    {
+        self::assertStringContainsString('<sds-button variant="secondary" for="deck-80">Play the slides</sds-button>', $this->markup);
+        self::assertStringContainsString('<sds-deck id="deck-80" from="main-content" label="The theme in slides" product="Example" numbered></sds-deck>', $this->markup);
+    }
 }

@@ -39,6 +39,12 @@
 * `ddev composer phpstan`
 * `npm --prefix Build ci && npm --prefix Build run build` — the drop-in
 
+## Coverage
+
+* Every element of the npm package has a place in a template, or a
+  reason in `ELSEWHERE` in `Build/coverage.js`. `npm run build` checks
+  it. A version bump that brings an element brings its place.
+
 ## Frontend build
 
 * `Build/package.json` pins `@typo3/soul-frontend`.
