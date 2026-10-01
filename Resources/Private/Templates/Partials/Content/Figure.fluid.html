@@ -1,0 +1,6 @@
+<f:comment>
+    One file as a figure. The picture stands between the tags, so it is on
+    the page before a script runs. The description of the file reference is
+    the caption: the claim the picture makes.
+</f:comment>
+<sds-figure {soul:attributes(of: {caption: file.description}, flags: {zoomable: zoom})}><f:switch expression="{file.type}"><f:case value="2"><f:image image="{file}" alt="{file.alternative}" title="{file.title}" maxWidth="1200" loading="{settings.media.lazyLoading}" /></f:case><f:defaultCase><f:media file="{file}" alt="{file.alternative}" title="{file.title}" additionalConfig="{settings.media.additionalConfig}" /></f:defaultCase></f:switch></sds-figure>

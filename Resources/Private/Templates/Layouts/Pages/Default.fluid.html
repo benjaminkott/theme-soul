@@ -1,0 +1,12 @@
+<f:comment>
+    What every page has, whichever layout it takes: the way past the bar,
+    the bar, the footer. The page template fills `Main` with one of the two
+    bodies. The skip link comes first because it is the first stop for a
+    keyboard, and its target is the `<main>` of either body.
+</f:comment>
+<a class="sds-skip sds-btn sds-btn--secondary" href="#main-content"><f:translate key="theme_soul.messages:skip" /></a>
+<div class="sds-shell">
+    <f:render partial="Page/Bar" arguments="{_all}" />
+    <f:render section="Main" />
+    <f:render partial="Page/Footer" arguments="{_all}" />
+</div>

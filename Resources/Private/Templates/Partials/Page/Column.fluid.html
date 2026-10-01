@@ -1,0 +1,20 @@
+<f:comment>
+    A page that reports: one column held to the measure, beside the rail
+    of the section the reader is in. A section that is one page has no
+    rail, and the column then stands alone.
+</f:comment>
+<div class="sds-body">
+    <f:if condition="{chrome.rail}">
+        <aside class="sds-body__rail" id="page-rail">
+            <sds-nav-rail {soul:attributes(of: {entry: chrome.rail})}></sds-nav-rail>
+        </aside>
+    </f:if>
+    <main class="sds-body__main" id="main-content">
+        <f:if condition="{chrome.crumbs}">
+            <sds-nav-breadcrumb {soul:attributes(of: {items: chrome.crumbs})}></sds-nav-breadcrumb>
+        </f:if>
+        <article class="sds-prose">
+            <f:render.contentArea contentArea="{content.main}" />
+        </article>
+    </main>
+</div>

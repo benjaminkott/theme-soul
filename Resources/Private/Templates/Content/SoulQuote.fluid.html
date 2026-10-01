@@ -1,0 +1,12 @@
+<f:comment>
+    A sentence from somewhere else. The text is the sentence, the header
+    says who said it, the subheader what they are to the subject, and the
+    link is where the full text is.
+</f:comment>
+<f:layout name="Content/Default" />
+<f:section name="Header" />
+<f:section name="Main">
+    <f:variable name="href" value="" />
+    <f:if condition="{data.header_link}"><f:variable name="href">{f:uri.typolink(parameter: data.header_link)}</f:variable></f:if>
+    <sds-quote {soul:attributes(of: {by: data.header, as: data.subheader, href: href})}>{data.bodytext -> f:format.nl2br()}</sds-quote>
+</f:section>

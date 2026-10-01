@@ -1,0 +1,10 @@
+<f:comment>
+    An element is its heading and its body, and no frame around them. A
+    band and a column trim the space of their first and last child, and a
+    frame would be that child instead. So the anchor `c<uid>` stands on
+    the heading, which is what a section menu links to.
+</f:comment>
+<f:render section="Header" optional="true">
+    <f:render partial="Content/Header" arguments="{_all}" />
+</f:render>
+<f:render section="Main" optional="true" />

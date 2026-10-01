@@ -1,0 +1,22 @@
+<f:comment>
+    The files of an element. One is a figure. More are a wall of figures,
+    as many across as the editor chose and four at most, because a narrower
+    room takes fewer.
+</f:comment>
+<f:if condition="{files}">
+    <f:if condition="{files -> f:count()} > 1">
+        <f:then>
+            <f:variable name="columns" value="" />
+            <f:if condition="{data.imagecols} > 1"><f:variable name="columns" value="{data.imagecols}" /></f:if>
+            <f:if condition="{data.imagecols} > 4"><f:variable name="columns" value="4" /></f:if>
+            <sds-grid {soul:attributes(of: {columns: columns})}>
+                <f:for each="{files}" as="file">
+                    <f:render partial="Content/Figure" arguments="{file: file, zoom: data.image_zoom, settings: settings}" />
+                </f:for>
+            </sds-grid>
+        </f:then>
+        <f:else>
+            <f:render partial="Content/Figure" arguments="{file: files.0, zoom: data.image_zoom, settings: settings}" />
+        </f:else>
+    </f:if>
+</f:if>

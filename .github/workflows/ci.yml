@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+
+  build-php:
+    name: Build PHP
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['8.2', '8.3', '8.4', '8.5']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Set up PHP ${{ matrix.php }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: intl, pdo_sqlite
+          tools: composer:v2
+      - id: install
+        name: Install
+        run: composer update --no-progress
+      - name: Lint
+        if: ${{ always() && steps.install.conclusion == 'success' }}
+        run: composer test:php:lint
+      - name: CGL
+        if: ${{ always() && steps.install.conclusion == 'success' }}
+        run: composer cgl:ci
+      - name: PHPStan
+        if: ${{ always() && steps.install.conclusion == 'success' }}
+        run: composer phpstan -- --error-format=github
+      - name: Functional tests
+        if: ${{ always() && steps.install.conclusion == 'success' }}
+        run: composer test:php:functional
+
+  # The drop-in in Resources/Public/Soul/ is committed. A tree that differs
+  # from what the pinned npm package builds is a release nobody made.
+  build-frontend:
+    name: Build Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: Build/.nvmrc
+      - name: Install
+        run: npm --prefix Build ci
+      - name: Build
+        run: npm --prefix Build run build
+      - name: Status
+        run: |
+          git status --porcelain
+          test -z "$(git status --porcelain)"

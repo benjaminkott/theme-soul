@@ -1,0 +1,25 @@
+<f:comment>
+    Pages as a list of links, and the pages under each one as a list
+    inside it. A sitemap is the same list at every depth.
+</f:comment>
+<f:if condition="{menu}">
+    <ul>
+        <f:for each="{menu}" as="page">
+            <li>
+                <f:variable name="current" value="" />
+                <f:if condition="{page.current}"><f:variable name="current" value="page" /></f:if>
+                <a href="{page.link}" {soul:attributes(of: {target: page.target, ariaCurrent: current})}>{page.title}</a>
+                <f:if condition="{page.content}">
+                    <ul>
+                        <f:for each="{page.content}" as="element">
+                            <f:if condition="{element.data.header}">
+                                <li><a href="{page.link}#c{element.data.uid}">{element.data.header}</a></li>
+                            </f:if>
+                        </f:for>
+                    </ul>
+                </f:if>
+                <f:render partial="Content/Links" arguments="{menu: page.children}" />
+            </li>
+        </f:for>
+    </ul>
+</f:if>

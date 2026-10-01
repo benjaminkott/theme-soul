@@ -1,0 +1,76 @@
+# The page: the drop-in in the head, and one Fluid template per backend
+# layout. The elements get their data from the core menus, through
+# `soul-chrome`, and a page in bands gets its content cut by `soul-bands`.
+page = PAGE
+page {
+  typeNum = 0
+  bodyTag = <body class="sds-app">
+  meta.viewport = width=device-width, initial-scale=1
+
+  # Not a module, and first: it writes the stored mode choice into
+  # `data-theme` before the first paint.
+  includeJS.soulBoot = EXT:theme_soul/Resources/Public/Soul/soul-boot.js
+  includeJS.soulBoot {
+    forceOnTop = 1
+    excludeFromConcatenation = 1
+    disableCompression = 1
+  }
+
+  includeCSS.soul = EXT:theme_soul/Resources/Public/Soul/soul.css
+  includeCSS.soul {
+    excludeFromConcatenation = 1
+    disableCompression = 1
+  }
+
+  # The elements find their icons beside this file, from its own address.
+  # A copy under another name or in a bundle finds nothing.
+  includeJS.soul = EXT:theme_soul/Resources/Public/Soul/soul.js
+  includeJS.soul {
+    type = module
+    excludeFromConcatenation = 1
+    disableCompression = 1
+  }
+
+  # The faces the page opens in, before the stylesheet asks for them.
+  headerData.1727 = COA
+  headerData.1727 {
+    10 = TEXT
+    10.value = <link rel="preload" as="font" type="font/woff2" crossorigin href="{path:EXT:theme_soul/Resources/Public/Soul/fonts/source-sans-3-latin-wght-normal.woff2}">
+    10.insertData = 1
+    20 = TEXT
+    20.value = <link rel="preload" as="font" type="font/woff2" crossorigin href="{path:EXT:theme_soul/Resources/Public/Soul/fonts/source-code-pro-latin-wght-normal.woff2}">
+    20.insertData = 1
+  }
+
+  10 = PAGEVIEW
+  10 {
+    paths.10 = EXT:theme_soul/Resources/Private/Templates/
+
+    dataProcessing {
+      10 = page-content
+
+      # Three levels: the bar's row, the panel under it, and the folds of
+      # the rail. The footer reads the first two.
+      20 = menu
+      20 {
+        levels = 3
+        expandAll = 1
+        as = navigation
+      }
+
+      30 = menu
+      30 {
+        special = rootline
+        as = rootline
+      }
+
+      40 = language-menu
+      40.as = languages
+
+      50 = soul-chrome
+      50.product = {$soul.product}
+
+      60 = soul-bands
+    }
+  }
+}

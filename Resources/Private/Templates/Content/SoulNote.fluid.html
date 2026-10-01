@@ -1,0 +1,10 @@
+<f:comment>
+    A fact pulled out of the text. The header is the fact in a line, the
+    text is what it means for the reader, and the tone says which kind of
+    aside it is. The text stands between the tags.
+</f:comment>
+<f:layout name="Content/Default" />
+<f:section name="Header" />
+<f:section name="Main">
+    <sds-note {soul:attributes(of: {tone: data.tx_themesoul_tone, heading: data.header})}>{record -> f:render.text(field: 'bodytext')}</sds-note>
+</f:section>

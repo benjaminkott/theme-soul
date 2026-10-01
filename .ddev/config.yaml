@@ -1,0 +1,21 @@
+name: theme-soul
+type: typo3
+docroot: .build/public
+php_version: "8.4"
+webserver_type: apache-fpm
+xdebug_enabled: false
+database:
+    type: mariadb
+    version: "11.8"
+hooks:
+    pre-start:
+        - exec-host: mkdir -p .build/public/typo3
+        - exec-host: mkdir -p config/system
+    post-start:
+        - composer: install
+composer_version: "2"
+web_environment:
+    - PATH=/var/www/html/.build/bin:$PATH
+    - TYPO3_CONTEXT=Development
+nodejs_version: "24"
+corepack_enable: false

@@ -1,0 +1,24 @@
+@import 'EXT:theme_soul/Configuration/BackendLayouts/*.tsconfig'
+
+TCEFORM.pages {
+  backend_layout.removeItems = -1
+  backend_layout_next_level.removeItems = -1
+}
+
+TCEFORM.tt_content {
+  CType.removeItems := removeFromList(soul_hero,soul_note,soul_code,soul_quote)
+  tx_themesoul_tone.disabled = 0
+  tx_themesoul_code_lang.disabled = 0
+  tx_themesoul_action.disabled = 0
+
+  # The fields the templates do not read. A frame, a space or an alignment
+  # each needs a class the system does not define, so an editor gets no
+  # field that changes nothing.
+  frame_class.disabled = 1
+  space_before_class.disabled = 1
+  space_after_class.disabled = 1
+  header_position.disabled = 1
+  date.disabled = 1
+  layout.disabled = 1
+  layout.types.div.disabled = 0
+}

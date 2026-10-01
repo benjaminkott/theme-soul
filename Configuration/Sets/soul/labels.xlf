@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="EXT:theme_soul/Configuration/Sets/soul/labels.xlf" date="2026-10-01T00:00:00Z" product-name="theme_soul">
+    <header/>
+    <body>
+      <trans-unit id="label">
+        <source>Theme: Soul</source>
+      </trans-unit>
+      <trans-unit id="categories.soul">
+        <source>Soul</source>
+      </trans-unit>
+      <trans-unit id="settings.soul.product">
+        <source>Product</source>
+      </trans-unit>
+      <trans-unit id="settings.description.soul.product">
+        <source>The name of the site in the bar and in the footer, verbatim.</source>
+      </trans-unit>
+      <trans-unit id="settings.soul.brand">
+        <source>Brand</source>
+      </trans-unit>
+      <trans-unit id="settings.description.soul.brand">
+        <source>Who publishes the site, where that is a second name. It stands before the product, with the accent rule between the two.</source>
+      </trans-unit>
+      <trans-unit id="settings.soul.signet">
+        <source>Signet</source>
+      </trans-unit>
+      <trans-unit id="settings.description.soul.signet">
+        <source>The mark, as a file: EXT:my_site/Resources/Public/signet.svg. Empty shows the name alone.</source>
+      </trans-unit>
+      <trans-unit id="settings.soul.note">
+        <source>Footer note</source>
+      </trans-unit>
+      <trans-unit id="settings.description.soul.note">
+        <source>One sentence on every page: what the product is, and who it is for.</source>
+      </trans-unit>
+      <trans-unit id="settings.soul.version">
+        <source>Version</source>
+      </trans-unit>
+      <trans-unit id="settings.description.soul.version">
+        <source>The version of the product the site describes. The footer shows it.</source>
+      </trans-unit>
+      <trans-unit id="settings.soul.copyright">
+        <source>Copyright</source>
+      </trans-unit>
+      <trans-unit id="settings.description.soul.copyright">
+        <source>Whose the content is and from when. The footer shows it on a line of its own.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

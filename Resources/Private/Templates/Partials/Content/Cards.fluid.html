@@ -1,0 +1,16 @@
+<f:comment>
+    Pages as a wall of cards: a way into each one. The abstract stands
+    between the tags, the description where there is none, so the text of
+    a card is on the page before a script runs.
+</f:comment>
+<f:if condition="{menu}">
+    <sds-grid>
+        <f:for each="{menu}" as="page">
+            <f:variable name="picture" value="" />
+            <f:if condition="{page.files.0}">
+                <f:variable name="picture">{f:uri.image(image: page.files.0, maxWidth: 800)}</f:variable>
+            </f:if>
+            <sds-card {soul:attributes(of: {heading: page.title, href: page.link, src: picture, alt: page.files.0.alternative})}>{f:if(condition: page.data.abstract, then: page.data.abstract, else: page.data.description)}</sds-card>
+        </f:for>
+    </sds-grid>
+</f:if>

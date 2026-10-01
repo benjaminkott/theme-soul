@@ -1,0 +1,32 @@
+<f:comment>
+    The table as markup between the tags. The element takes it as it
+    stands, and a page with no script still has the table. The head row,
+    the head column and the foot row are the editor's choice.
+</f:comment>
+<f:layout name="Content/Default" />
+<f:section name="Main">
+    <f:if condition="{table}">
+        <f:variable name="caption">{record -> f:render.text(field: 'table_caption', optional: true)}</f:variable>
+        <sds-table scrollable>
+            <table>
+                <f:if condition="{caption}"><caption>{caption}</caption></f:if>
+                <f:if condition="{data.table_header_position} == 1">
+                    <thead><tr><f:for each="{table.0}" as="cell"><th scope="col">{cell -> f:format.nl2br()}</th></f:for></tr></thead>
+                </f:if>
+                <tbody>
+                    <f:for each="{table}" as="row" iteration="at">
+                        <f:if condition="!({at.isFirst} && {data.table_header_position} == 1) && !({at.isLast} && {data.table_tfoot})">
+                            <f:render section="Row" arguments="{row: row, data: data}" />
+                        </f:if>
+                    </f:for>
+                </tbody>
+                <f:if condition="{data.table_tfoot}">
+                    <tfoot><f:render section="Row" arguments="{row: '{table -> f:last()}', data: data}" /></tfoot>
+                </f:if>
+            </table>
+        </sds-table>
+    </f:if>
+</f:section>
+<f:section name="Row">
+    <tr><f:for each="{row}" as="cell" iteration="at"><f:if condition="{at.isFirst} && {data.table_header_position} == 2"><f:then><th scope="row">{cell -> f:format.nl2br()}</th></f:then><f:else><td>{cell -> f:format.nl2br()}</td></f:else></f:if></f:for></tr>
+</f:section>

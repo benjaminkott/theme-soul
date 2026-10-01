@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="EXT:theme_soul/Resources/Private/Language/backend_layouts.xlf" date="2026-10-01T00:00:00Z" product-name="theme_soul">
+    <header/>
+    <body>
+      <trans-unit id="layout.page">
+        <source>Page: a column beside the rail</source>
+      </trans-unit>
+      <trans-unit id="layout.bands">
+        <source>Bands: full-width sections, cut at each divider</source>
+      </trans-unit>
+      <trans-unit id="column.main">
+        <source>Content</source>
+      </trans-unit>
+      <trans-unit id="column.bands">
+        <source>Bands (a divider starts the next one)</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

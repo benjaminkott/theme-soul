@@ -1,0 +1,15 @@
+<f:comment>
+    The footer. A column per section of the site with the pages under it,
+    out of the same menu as the bar, so a page added to the tree reaches
+    both. What the tree cannot say comes from the site settings.
+</f:comment>
+<f:variable name="signet"><f:if condition="{settings.soul.signet}">{f:uri.resource(path: settings.soul.signet)}</f:if></f:variable>
+<sds-footer {soul:attributes(of: {
+    groups: chrome.groups,
+    product: settings.soul.product,
+    signet: signet,
+    brand: settings.soul.brand,
+    note: settings.soul.note,
+    version: settings.soul.version,
+    copyright: settings.soul.copyright
+})}></sds-footer>

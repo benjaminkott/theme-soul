@@ -1,0 +1,18 @@
+<f:comment>
+    A page that argues: full-width bands, and the ground changes where the
+    argument takes a step. `soul-bands` cut the column at each divider, and
+    the divider's layout says which ground the next band stands on. Each
+    band holds its content to the measure, so they are siblings.
+</f:comment>
+<f:layout name="Pages/Default" />
+<f:section name="Main">
+    <main class="sds-bands" id="main-content">
+        <f:for each="{bands}" as="band">
+            <section class="sds-band{f:if(condition: band.quiet, then: ' sds-band--quiet')}" {soul:attributes(of: {id: band.id})}>
+                <f:for each="{band.records}" as="record">
+                    <f:render.record record="{record}" />
+                </f:for>
+            </section>
+        </f:for>
+    </main>
+</f:section>

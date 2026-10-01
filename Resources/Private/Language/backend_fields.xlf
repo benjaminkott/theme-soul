@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="EXT:theme_soul/Resources/Private/Language/backend_fields.xlf" date="2026-10-01T00:00:00Z" product-name="theme_soul">
+    <header/>
+    <body>
+      <trans-unit id="group.soul">
+        <source>Soul</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_hero">
+        <source>Hero</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_hero.description">
+        <source>The first band of a page that argues: the title, one paragraph, one action and a picture.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_note">
+        <source>Note</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_note.description">
+        <source>A fact pulled out of the text, with a tone: information, a result, a warning or an error.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_code">
+        <source>Code</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_code.description">
+        <source>A block of code or a command, coloured by its language, with a copy button.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_quote">
+        <source>Quote</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.soul_quote.description">
+        <source>A sentence from somebody else, with who said it and where the full text is.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_tone">
+        <source>Tone</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_tone.info">
+        <source>Information</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_tone.ok">
+        <source>Result</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_tone.warn">
+        <source>Warning</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_tone.error">
+        <source>Error</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_code_lang">
+        <source>Language</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_action">
+        <source>Action label</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_themesoul_action.description">
+        <source>The words on the button. The button goes to the header link.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.layout.div.plain">
+        <source>Next band on the plain ground</source>
+      </trans-unit>
+      <trans-unit id="tt_content.layout.div.quiet">
+        <source>Next band on the quiet ground</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,14 @@
+<f:comment>
+    The bar. The site is one entry, with every section under it and the
+    page the reader is on marked where it stands. The element draws as much
+    of it as the width permits, so it gets the whole tree as data.
+</f:comment>
+<f:variable name="signet"><f:if condition="{settings.soul.signet}">{f:uri.resource(path: settings.soul.signet)}</f:if></f:variable>
+<sds-nav-main {soul:attributes(of: {
+    home: chrome.menu.href,
+    signet: signet,
+    brand: settings.soul.brand,
+    product: settings.soul.product,
+    menu: chrome.menu,
+    languages: chrome.languages
+})}></sds-nav-main>

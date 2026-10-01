@@ -1,0 +1,30 @@
+# What a site says about itself. The bar and the footer read every one of
+# them, and none of them has a value the system can guess.
+categories:
+  soul: ~
+
+settings:
+  soul.product:
+    default: ''
+    type: string
+    category: soul
+  soul.brand:
+    default: ''
+    type: string
+    category: soul
+  soul.signet:
+    default: ''
+    type: string
+    category: soul
+  soul.note:
+    default: ''
+    type: string
+    category: soul
+  soul.version:
+    default: ''
+    type: string
+    category: soul
+  soul.copyright:
+    default: ''
+    type: string
+    category: soul

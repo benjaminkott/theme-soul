@@ -1,0 +1,96 @@
+{
+    "name": "typo3/theme-soul",
+    "type": "typo3-cms-extension",
+    "description": "Theme: Soul - The Soul design system as a TYPO3 theme: two page layouts, the bar, the rail and the footer, and content elements that emit the sds- elements.",
+    "keywords": [
+        "TYPO3 CMS",
+        "theme",
+        "site set",
+        "design system",
+        "web components"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "The TYPO3 Project",
+            "homepage": "https://typo3.org/"
+        }
+    ],
+    "require": {
+        "php": ">=8.2.0",
+        "typo3/cms-core": "^14.3",
+        "typo3/cms-fluid": "^14.3",
+        "typo3/cms-fluid-styled-content": "^14.3",
+        "typo3/cms-frontend": "^14.3"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.90",
+        "overtrue/phplint": "^9.6",
+        "phpstan/phpstan": "^2.1",
+        "phpstan/phpstan-phpunit": "^2.0",
+        "phpstan/phpstan-strict-rules": "^2.0",
+        "typo3/cms-backend": "^14.3",
+        "typo3/cms-install": "^14.3",
+        "typo3/cms-rte-ckeditor": "^14.3",
+        "typo3/cms-tstemplate": "^14.3",
+        "typo3/coding-standards": "^0.9",
+        "typo3/testing-framework": "^9.0.0"
+    },
+    "config": {
+        "bin-dir": ".build/bin",
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "vendor-dir": ".build/vendor",
+        "allow-plugins": {
+            "typo3/class-alias-loader": true,
+            "typo3/cms-composer-installers": true
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "0.1.x-dev"
+        },
+        "typo3/cms": {
+            "extension-key": "theme_soul",
+            "web-dir": ".build/public",
+            "version": "0.1.0"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "TYPO3\\Soul\\Theme\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TYPO3\\Soul\\Theme\\Tests\\": "Tests"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "cgl": [
+            "php-cs-fixer --diff -v fix"
+        ],
+        "cgl:ci": [
+            "php-cs-fixer --diff -v --dry-run fix"
+        ],
+        "phpstan": [
+            "phpstan analyze --configuration Build/phpstan.neon"
+        ],
+        "test": [
+            "@test:php:lint",
+            "@test:php:functional"
+        ],
+        "test:php:functional": [
+            "phpunit -c Build/phpunit-functional.xml"
+        ],
+        "test:php:lint": [
+            "phplint"
+        ]
+    },
+    "support": {
+        "issues": "https://github.com/benjaminkott/theme-soul/issues",
+        "source": "https://github.com/benjaminkott/theme-soul"
+    }
+}

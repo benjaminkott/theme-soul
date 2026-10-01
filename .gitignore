@@ -1,0 +1,13 @@
+.build
+Build/node_modules/
+composer.lock
+*.cache
+.phpunit.cache/
+
+config/
+var/
+
+.agents/
+.claude/
+.codex/
+.vscode/

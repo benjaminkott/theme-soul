@@ -1,0 +1,26 @@
+<f:comment>
+    The heading at the level the editor chose, the site's default level
+    otherwise. The subheader is the lead under it: the system sets a
+    heading and the lead after it as one pair.
+</f:comment>
+<f:if condition="{data.header_layout} != 100">
+    <f:variable name="header">{record -> f:render.text(field: 'header', optional: true)}</f:variable>
+    <f:variable name="subheader">{record -> f:render.text(field: 'subheader', optional: true)}</f:variable>
+    <f:variable name="level">{settings.defaultHeaderType}</f:variable>
+    <f:if condition="{data.header_layout} > 0 && {data.header_layout} < 7">
+        <f:variable name="level">{data.header_layout}</f:variable>
+    </f:if>
+    <f:if condition="{header}">
+        <f:switch expression="{level}">
+            <f:case value="1"><h1 id="c{data.uid}"><f:link.typolink parameter="{data.header_link}">{header}</f:link.typolink></h1></f:case>
+            <f:case value="3"><h3 id="c{data.uid}"><f:link.typolink parameter="{data.header_link}">{header}</f:link.typolink></h3></f:case>
+            <f:case value="4"><h4 id="c{data.uid}"><f:link.typolink parameter="{data.header_link}">{header}</f:link.typolink></h4></f:case>
+            <f:case value="5"><h5 id="c{data.uid}"><f:link.typolink parameter="{data.header_link}">{header}</f:link.typolink></h5></f:case>
+            <f:case value="6"><h6 id="c{data.uid}"><f:link.typolink parameter="{data.header_link}">{header}</f:link.typolink></h6></f:case>
+            <f:defaultCase><h2 id="c{data.uid}"><f:link.typolink parameter="{data.header_link}">{header}</f:link.typolink></h2></f:defaultCase>
+        </f:switch>
+    </f:if>
+    <f:if condition="{subheader}">
+        <p class="sds-lead">{subheader}</p>
+    </f:if>
+</f:if>

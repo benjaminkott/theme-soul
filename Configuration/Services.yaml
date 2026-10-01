@@ -1,0 +1,16 @@
+# The two processors the page templates read, under the names the
+# TypoScript uses. Everything else in the extension is configuration and
+# templates, and needs no service.
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  TYPO3\Soul\Theme\DataProcessing\ChromeProcessor:
+    tags:
+      - { name: 'data.processor', identifier: 'soul-chrome' }
+
+  TYPO3\Soul\Theme\DataProcessing\BandsProcessor:
+    tags:
+      - { name: 'data.processor', identifier: 'soul-bands' }

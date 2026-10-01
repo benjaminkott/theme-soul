@@ -1,0 +1,31 @@
+<f:comment>
+    The first band of a page that argues. The subheader is the line over
+    the title that says what kind of thing it opens, the title is the
+    page's one display heading, and the text is its lead. One action and
+    one picture at most: a hero with two calls has no call.
+</f:comment>
+<f:layout name="Content/Default" />
+<f:section name="Header" />
+<f:section name="Main">
+    <f:variable name="column">
+        <div class="sds-column">
+            <f:if condition="{data.subheader}"><sds-eyebrow {soul:attributes(of: {label: data.subheader})}></sds-eyebrow></f:if>
+            <h1 class="sds-display" id="c{data.uid}">{data.header}</h1>
+            <f:if condition="{data.bodytext}"><p class="sds-lead">{data.bodytext}</p></f:if>
+            <f:if condition="{data.header_link} && {data.tx_themesoul_action}">
+                <div class="sds-actions">
+                    <sds-button variant="primary" size="lg" {soul:attributes(of: {href: '{f:uri.typolink(parameter: data.header_link)}'})}>{data.tx_themesoul_action}</sds-button>
+                </div>
+            </f:if>
+        </div>
+    </f:variable>
+    <f:if condition="{files}">
+        <f:then>
+            <div class="sds-split">
+                {column -> f:format.raw()}
+                <div class="sds-column"><f:render partial="Content/Figure" arguments="{file: files.0, settings: settings}" /></div>
+            </div>
+        </f:then>
+        <f:else>{column -> f:format.raw()}</f:else>
+    </f:if>
+</f:section>

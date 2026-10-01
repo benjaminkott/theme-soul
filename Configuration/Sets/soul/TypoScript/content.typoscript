@@ -1,0 +1,24 @@
+# The content elements: the core's types, and the ones the core does not
+# have. Every template here emits the system's elements and no class of
+# its own.
+lib.contentElement {
+  templateRootPaths.1727 = EXT:theme_soul/Resources/Private/Templates/Content/
+  partialRootPaths.1727 = EXT:theme_soul/Resources/Private/Templates/Partials/
+  layoutRootPaths.1727 = EXT:theme_soul/Resources/Private/Templates/Layouts/
+}
+
+tt_content.soul_hero =< lib.contentElement
+tt_content.soul_hero {
+  templateName = SoulHero
+  dataProcessing.10 = files
+  dataProcessing.10.references.fieldName = assets
+}
+
+tt_content.soul_note =< lib.contentElement
+tt_content.soul_note.templateName = SoulNote
+
+tt_content.soul_code =< lib.contentElement
+tt_content.soul_code.templateName = SoulCode
+
+tt_content.soul_quote =< lib.contentElement
+tt_content.soul_quote.templateName = SoulQuote

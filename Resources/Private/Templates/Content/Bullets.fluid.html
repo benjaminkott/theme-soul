@@ -1,0 +1,26 @@
+<f:comment>
+    A list as the document has it: bullets, numbers, or terms with what
+    they mean. The column sets each one.
+</f:comment>
+<f:layout name="Content/Default" />
+<f:section name="Main">
+    <f:if condition="{bullets}">
+        <f:switch expression="{data.bullets_type}">
+            <f:case value="1">
+                <ol><f:for each="{bullets}" as="bullet"><li>{bullet}</li></f:for></ol>
+            </f:case>
+            <f:case value="2">
+                <dl>
+                    <f:for each="{bullets}" as="entry">
+                        <f:for each="{entry}" as="part" iteration="at">
+                            <f:if condition="{at.isFirst}"><f:then><dt>{part}</dt></f:then><f:else><dd>{part}</dd></f:else></f:if>
+                        </f:for>
+                    </f:for>
+                </dl>
+            </f:case>
+            <f:defaultCase>
+                <ul><f:for each="{bullets}" as="bullet"><li>{bullet}</li></f:for></ul>
+            </f:defaultCase>
+        </f:switch>
+    </f:if>
+</f:section>

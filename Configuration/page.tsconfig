@@ -1,0 +1,8 @@
+# Off for every site, and on again in the set's page TSconfig. The types
+# and the fields of this theme then appear only on a site that takes it.
+TCEFORM.tt_content {
+  CType.removeItems := addToList(soul_hero,soul_note,soul_code,soul_quote)
+  tx_themesoul_tone.disabled = 1
+  tx_themesoul_code_lang.disabled = 1
+  tx_themesoul_action.disabled = 1
+}

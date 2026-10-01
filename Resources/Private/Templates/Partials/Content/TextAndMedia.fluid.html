@@ -1,0 +1,30 @@
+<f:comment>
+    Text with its files, where the editor put them. Above and below stay
+    in the column. Beside is the split: two columns, with the files on the
+    side the editor chose.
+</f:comment>
+<f:variable name="bodytext">{record -> f:render.text(field: 'bodytext')}</f:variable>
+<f:if condition="{files} && {bodytext} && {data.imageorient} > 16">
+    <f:then>
+        <div class="sds-split">
+            <f:if condition="{data.imageorient} == 18 || {data.imageorient} == 26">
+                <f:then>
+                    <div class="sds-column"><f:render partial="Content/Media" arguments="{_all}" /></div>
+                    <div class="sds-column">{bodytext}</div>
+                </f:then>
+                <f:else>
+                    <div class="sds-column">{bodytext}</div>
+                    <div class="sds-column"><f:render partial="Content/Media" arguments="{_all}" /></div>
+                </f:else>
+            </f:if>
+        </div>
+    </f:then>
+    <f:else if="{data.imageorient} > 7">
+        {bodytext}
+        <f:render partial="Content/Media" arguments="{_all}" />
+    </f:else>
+    <f:else>
+        <f:render partial="Content/Media" arguments="{_all}" />
+        {bodytext}
+    </f:else>
+</f:if>

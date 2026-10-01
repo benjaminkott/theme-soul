@@ -1,0 +1,17 @@
+{
+  "name": "typo3-theme-soul",
+  "description": "Takes the Soul design system from npm into Resources/Public/Soul/ of the extension.",
+  "repository": "https://github.com/benjaminkott/theme-soul.git",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "^24.15.0"
+  },
+  "devDependencies": {
+    "@typo3/soul-frontend": "0.8.0"
+  },
+  "scripts": {
+    "build": "node build.js"
+  }
+}

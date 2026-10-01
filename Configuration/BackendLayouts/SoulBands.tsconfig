@@ -1,0 +1,26 @@
+mod {
+  web_layout {
+    BackendLayouts {
+      SoulBands {
+        title = LLL:theme_soul.backend_layouts:layout.bands
+        config {
+          backend_layout {
+            colCount = 1
+            rowCount = 1
+            rows {
+              1 {
+                columns {
+                  1 {
+                    name = LLL:theme_soul.backend_layouts:column.bands
+                    colPos = 0
+                    identifier = main
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
