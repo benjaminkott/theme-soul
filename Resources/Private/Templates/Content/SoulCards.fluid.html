@@ -16,7 +16,7 @@
                     <f:variable name="alt">{file.alternative}</f:variable>
                 </f:if>
             </f:for>
-            <sds-card {soul:attributes(of: {heading: item.header, href: href, src: picture, alt: alt, label: item.label, tag: item.value, icon: item.icon, footer: item.note, action: item.link_label, body: item.text})}></sds-card>
+            <sds-card {soul:attributes(of: {heading: item.header, href: href, src: picture, alt: alt, label: item.label, tag: item.value, icon: '{soul:icon(name: item.icon)}', footer: item.note, action: item.link_label, body: item.text})}></sds-card>
         </f:for>
     </sds-grid>
 </f:section>

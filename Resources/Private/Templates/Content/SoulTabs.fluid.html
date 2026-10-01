@@ -6,7 +6,7 @@
 <f:section name="Main">
     <sds-tabs>
         <f:for each="{record.tx_themesoul_items}" as="item">
-            <sds-tab-item {soul:attributes(of: {label: item.header, icon: item.icon}, flags: {active: item.marked})}>{item -> f:render.text(field: 'text')}</sds-tab-item>
+            <sds-tab-item {soul:attributes(of: {label: item.header, icon: '{soul:icon(name: item.icon)}'}, flags: {active: item.marked})}>{item -> f:render.text(field: 'text')}</sds-tab-item>
         </f:for>
     </sds-tabs>
 </f:section>

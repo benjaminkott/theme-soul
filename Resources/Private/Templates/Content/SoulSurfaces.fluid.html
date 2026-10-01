@@ -5,7 +5,7 @@
 <f:section name="Main">
     <sds-grid {soul:attributes(of: {columns: data.tx_themesoul_columns})}>
         <f:for each="{record.tx_themesoul_items}" as="item">
-            <sds-surface {soul:attributes(of: {label: item.label, icon: item.icon, heading: item.header, body: item.text})}></sds-surface>
+            <sds-surface {soul:attributes(of: {label: item.label, icon: '{soul:icon(name: item.icon)}', heading: item.header, body: item.text})}></sds-surface>
         </f:for>
     </sds-grid>
 </f:section>

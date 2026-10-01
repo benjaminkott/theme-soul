@@ -7,7 +7,7 @@
         <f:for each="{record.tx_themesoul_items}" as="item">
             <f:variable name="href" value="" />
             <f:if condition="{item.link}"><f:variable name="href">{f:uri.typolink(parameter: item.link)}</f:variable></f:if>
-            <sds-icon-tile {soul:attributes(of: {name: item.icon, caption: item.header, href: href, tag: item.label})}></sds-icon-tile>
+            <sds-icon-tile {soul:attributes(of: {name: '{soul:icon(name: item.icon)}', caption: item.header, href: href, tag: item.label})}></sds-icon-tile>
         </f:for>
     </sds-grid>
 </f:section>

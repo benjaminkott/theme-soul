@@ -6,7 +6,7 @@
 <f:section name="Main">
     <sds-grid {soul:attributes(of: {variant: 'dense', columns: data.tx_themesoul_columns})}>
         <f:for each="{record.tx_themesoul_items}" as="item">
-            <sds-stat {soul:attributes(of: {value: item.value, unit: item.unit, label: item.header, icon: item.icon, note: item.note})}></sds-stat>
+            <sds-stat {soul:attributes(of: {value: item.value, unit: item.unit, label: item.header, icon: '{soul:icon(name: item.icon)}', note: item.note})}></sds-stat>
         </f:for>
     </sds-grid>
 </f:section>

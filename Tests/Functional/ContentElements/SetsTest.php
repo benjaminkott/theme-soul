@@ -67,6 +67,13 @@ final class SetsTest extends SiteTestCase
     }
 
     #[Test]
+    public function anIconTheSystemDoesNotKnowIsNoIcon(): void
+    {
+        self::assertStringContainsString('<sds-card heading="Guide" href="/guide" label="CHAPTER 01" tag="new" footer="Read it" action="Open the guide" body="How to set it up."></sds-card>', $this->markup);
+        self::assertStringNotContainsString('"Icon"', $this->markup);
+    }
+
+    #[Test]
     public function iconsStandInAFlushWall(): void
     {
         self::assertMatchesRegularExpression('~<sds-grid variant="flush">\s*<sds-icon-tile name="actions-arrow-end" href="/guide" tag="BiDi"></sds-icon-tile>~', $this->markup);
