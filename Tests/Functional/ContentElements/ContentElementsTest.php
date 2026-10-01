@@ -111,4 +111,26 @@ final class ContentElementsTest extends SiteTestCase
     {
         self::assertStringContainsString('<hr>', $this->render('/guide/configure'));
     }
+
+    #[Test]
+    public function theSectionsOfAColumnPageAreItsContents(): void
+    {
+        $markup = $this->render('/guide/configure');
+        $entries = self::json($markup, 'sds-nav-toc', 'entries');
+
+        self::assertMatchesRegularExpression('~<div class="sds-aside">\s*<sds-nav-toc~', $markup);
+        self::assertSame('On this page', self::attribute($markup, 'sds-nav-toc', 'label'));
+        self::assertSame('Pages of the guide', $entries[0]['label']);
+        self::assertSame('#c30', $entries[0]['href']);
+        self::assertSame([['label' => 'A heading at the fourth level', 'href' => '#c32']], $entries[0]['items']);
+    }
+
+    #[Test]
+    public function theSectionsOfABandsPageArePills(): void
+    {
+        $items = self::json($this->render('/product'), 'sds-nav-pills', 'items');
+
+        self::assertContains(['label' => 'What it costs', 'href' => '#c23'], $items);
+        self::assertNotContains('Build the site once', array_column($items, 'label'));
+    }
 }

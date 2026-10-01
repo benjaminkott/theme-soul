@@ -1,0 +1,25 @@
+<f:comment>
+    The outline numbers the parts as the headings nest them, and marks
+    the part the reader has scrolled to.
+</f:comment>
+<f:layout name="Pages/Paper" />
+<f:section name="Main">
+    <div class="sds-paper">
+        <aside class="sds-paper__panel">
+            <div class="sds-paper__head">
+                <f:if condition="{page.pageRecord.subtitle}"><sds-eyebrow {soul:attributes(of: {label: page.pageRecord.subtitle})}></sds-eyebrow></f:if>
+                <p class="sds-paper__title">{page.pageRecord.title}</p>
+            </div>
+            <f:variable name="label"><f:translate key="theme_soul.messages:contents" /></f:variable>
+            <sds-nav-outline {soul:attributes(of: {label: label, entries: sections}, flags: {numbered: 1})}></sds-nav-outline>
+            <div class="sds-paper__foot">
+                <p><f:translate key="theme_soul.messages:changed" /> <f:format.date format="Y-m-d">{page.pageRecord.SYS_LASTCHANGED}</f:format.date></p>
+            </div>
+        </aside>
+        <main class="sds-paper__main" id="main-content">
+            <article class="sds-prose">
+                <f:render.contentArea contentArea="{content.main}" />
+            </article>
+        </main>
+    </div>
+</f:section>

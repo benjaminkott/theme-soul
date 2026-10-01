@@ -6,8 +6,14 @@
       <trans-unit id="skip">
         <source>Skip to content</source>
       </trans-unit>
-      <trans-unit id="download">
-        <source>Download</source>
+      <trans-unit id="sections">
+        <source>On this page</source>
+      </trans-unit>
+      <trans-unit id="contents">
+        <source>Contents</source>
+      </trans-unit>
+      <trans-unit id="changed">
+        <source>Last changed</source>
       </trans-unit>
     </body>
   </file>

@@ -47,8 +47,6 @@ page {
     paths.10 = EXT:theme_soul/Resources/Private/Templates/
 
     dataProcessing {
-      10 = page-content
-
       # Three levels: the bar's row, the panel under it, and the folds of
       # the rail. The footer reads the first two.
       20 = menu
@@ -71,6 +69,9 @@ page {
       50.product = {$soul.product}
 
       60 = soul-bands
+
+      # The headings of the page, for the outline of a document.
+      70 = soul-sections
     }
   }
 }

@@ -9,6 +9,9 @@
       <trans-unit id="layout.bands">
         <source>Bands: full-width sections, cut at each divider</source>
       </trans-unit>
+      <trans-unit id="layout.document">
+        <source>Document: one long text beside its outline, with no bar</source>
+      </trans-unit>
       <trans-unit id="column.main">
         <source>Content</source>
       </trans-unit>

@@ -5,7 +5,15 @@ lib.contentElement {
   templateRootPaths.1727 = EXT:theme_soul/Resources/Private/Templates/Content/
   partialRootPaths.1727 = EXT:theme_soul/Resources/Private/Templates/Partials/
   layoutRootPaths.1727 = EXT:theme_soul/Resources/Private/Templates/Layouts/
+
+  # The layout of the page an element stands on. A list of sections is
+  # the contents beside a column, and the pills across a band.
+  variables.pageLayout = TEXT
+  variables.pageLayout.data = pagelayout
 }
+
+tt_content.menu_section.dataProcessing.1727 = soul-sections
+tt_content.menu_section.dataProcessing.1727.from = menu
 
 tt_content.soul_hero =< lib.contentElement
 tt_content.soul_hero {

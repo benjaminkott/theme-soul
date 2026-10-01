@@ -45,7 +45,8 @@ final class ChromeProcessor implements DataProcessorInterface
                 'href' => (string)($rootline[0]['link'] ?? '/'),
                 'items' => $items,
             ],
-            'rail' => $this->rail($items),
+            'rail' => $rail = $this->rail($items),
+            'pager' => $rail === null ? null : $this->pager($rail),
             'groups' => $this->groups($items, $product),
             'crumbs' => $this->crumbs($rootline),
             'languages' => $this->languages($languages),
@@ -105,6 +106,51 @@ final class ChromeProcessor implements DataProcessorInterface
         }
 
         return null;
+    }
+
+    /**
+     * The pages either side of this one, in the order the rail lists them:
+     * the section first, then its pages, depth first. That is the order a
+     * reader takes through a section front to back.
+     *
+     * @param array<string, mixed> $section
+     *
+     * @return array<string, array<string, string>>|null
+     */
+    private function pager(array $section): ?array
+    {
+        $order = $this->flatten($section);
+        foreach ($order as $at => $entry) {
+            if (($entry['current'] ?? false) !== true) {
+                continue;
+            }
+            $pager = [];
+            if (isset($order[$at - 1])) {
+                $pager['previous'] = ['label' => $order[$at - 1]['label'], 'href' => $order[$at - 1]['href']];
+            }
+            if (isset($order[$at + 1])) {
+                $pager['next'] = ['label' => $order[$at + 1]['label'], 'href' => $order[$at + 1]['href']];
+            }
+
+            return $pager === [] ? null : $pager;
+        }
+
+        return null;
+    }
+
+    /**
+     * @param array<string, mixed> $entry
+     *
+     * @return list<array<string, mixed>>
+     */
+    private function flatten(array $entry): array
+    {
+        $order = [$entry];
+        foreach ($entry['items'] ?? [] as $item) {
+            array_push($order, ...$this->flatten($item));
+        }
+
+        return $order;
     }
 
     /**

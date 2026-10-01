@@ -1,4 +1,4 @@
-# The two processors the page templates read, under the names the
+# The processors the templates read, under the names the
 # TypoScript uses. Everything else in the extension is configuration and
 # templates, and needs no service.
 services:
@@ -14,3 +14,7 @@ services:
   TYPO3\Soul\Theme\DataProcessing\BandsProcessor:
     tags:
       - { name: 'data.processor', identifier: 'soul-bands' }
+
+  TYPO3\Soul\Theme\DataProcessing\SectionsProcessor:
+    tags:
+      - { name: 'data.processor', identifier: 'soul-sections' }

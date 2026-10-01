@@ -43,8 +43,9 @@ All under **Site Management → Settings → Theme: Soul**, and all optional.
 | Backend layout | Template | For |
 | --- | --- | --- |
 | *(none)* | `Pages/Default` | the same as `SoulPage` |
-| `SoulPage` | `Pages/SoulPage` | a page that reports: one column beside the rail of its section, with the trail over it |
+| `SoulPage` | `Pages/SoulPage` | a page that reports: one column beside the rail of its section, with the trail over it and the way on through the section under it |
 | `SoulBands` | `Pages/SoulBands` | a page that argues: full-width bands |
+| `SoulDocument` | `Pages/SoulDocument` | a long document on its own: the text beside its numbered outline, with no bar and no footer |
 
 On a `SoulBands` page, a **divider** ends one band and starts the next.
 The layout of the divider is the ground of the band it opens: plain or
@@ -52,6 +53,11 @@ quiet. The elements before the first divider are the first band.
 
 The bar gets the page tree three levels deep, and the footer has a
 column per section. A section that is one page has no rail.
+
+The sections of a page are its content elements with a heading at the
+second level or deeper. The outline of a document lists them, and so
+does the core type **Section index** with no pages selected: as the
+contents beside a column, or as pills across a band.
 
 ## Content types
 

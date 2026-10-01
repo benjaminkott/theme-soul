@@ -1,4 +1,22 @@
+<f:comment>
+    The sections of the page the element stands on: the contents beside a
+    column, which marks the section the reader has scrolled to, or the
+    pills across a band. Sections of other pages are a list of links.
+</f:comment>
 <f:layout name="Content/Default" />
 <f:section name="Main">
-    <f:render partial="Content/Links" arguments="{menu: menu}" />
+    <f:if condition="{data.pages}">
+        <f:then>
+            <f:render partial="Content/Links" arguments="{menu: menu}" />
+        </f:then>
+        <f:else if="{pageLayout} == 'pagets__SoulBands'">
+            <sds-nav-pills {soul:attributes(of: {items: sections})}></sds-nav-pills>
+        </f:else>
+        <f:else>
+            <f:variable name="label"><f:translate key="theme_soul.messages:sections" /></f:variable>
+            <div class="sds-aside">
+                <sds-nav-toc {soul:attributes(of: {label: label, entries: sections})}></sds-nav-toc>
+            </div>
+        </f:else>
+    </f:if>
 </f:section>

@@ -1,7 +1,8 @@
 <f:comment>
     A page that reports: one column held to the measure, beside the rail
     of the section the reader is in. A section that is one page has no
-    rail, and the column then stands alone.
+    rail, and the column then stands alone. The pager after the article is
+    the way on through the section, in the order the rail lists it.
 </f:comment>
 <div class="sds-body">
     <f:if condition="{chrome.rail}">
@@ -16,5 +17,13 @@
         <article class="sds-prose">
             <f:render.contentArea contentArea="{content.main}" />
         </article>
+        <f:if condition="{chrome.pager}">
+            <sds-nav-pager {soul:attributes(of: {
+                previousHref: chrome.pager.previous.href,
+                previousLabel: chrome.pager.previous.label,
+                nextHref: chrome.pager.next.href,
+                nextLabel: chrome.pager.next.label
+            })}></sds-nav-pager>
+        </f:if>
     </main>
 </div>
